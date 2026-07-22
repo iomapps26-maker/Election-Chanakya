@@ -1,0 +1,6 @@
+{
+  "name": "Election Chanakya",
+  "description": "India's premier political analytics, survey research, booth management, and election strategy agency headed by Vivek Gupta.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
