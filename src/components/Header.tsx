@@ -29,8 +29,9 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems: { label: string; route: PageRoute }[] = [
+  const navItems: { label: string; route: PageRoute; badge?: string }[] = [
     { label: 'Home', route: 'home' },
+    { label: 'Live Dashboard', route: 'dashboard', badge: 'LIVE' },
     { label: 'About', route: 'about' },
     { label: 'Services', route: 'services' },
     { label: 'Team', route: 'team' },
@@ -98,7 +99,14 @@ export const Header: React.FC<HeaderProps> = ({
                       : 'text-zinc-100 hover:text-[#ff7a00]'
                   }`}
                 >
-                  {item.label}
+                  <span className="flex items-center gap-1.5">
+                    {item.label}
+                    {item.badge && (
+                      <span className="bg-red-500 text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse">
+                        {item.badge}
+                      </span>
+                    )}
+                  </span>
                   {/* Animated Underline */}
                   {isActive && (
                     <span className="absolute bottom-0 left-3 right-3 h-[2.5px] bg-[#ff7a00] rounded-full animate-pulse" />

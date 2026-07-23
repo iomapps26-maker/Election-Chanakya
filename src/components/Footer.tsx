@@ -109,6 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onRouteChange }) => {
             <ul className="space-y-2.5 text-sm text-zinc-400">
               {[
                 { label: 'Home', route: 'home' as PageRoute },
+                { label: 'Live Dashboard', route: 'dashboard' as PageRoute },
                 { label: 'About Us', route: 'about' as PageRoute },
                 { label: 'Our Services', route: 'services' as PageRoute },
                 { label: 'Leadership & Team', route: 'team' as PageRoute },

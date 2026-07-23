@@ -114,11 +114,21 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
+            {/* Live Analytics Dashboard Button */}
+            <button
+              onClick={() => onRouteChange('dashboard')}
+              id="hero-dashboard-cta-btn"
+              className="bg-[#ff7a00]/20 hover:bg-[#ff7a00] text-white border-2 border-[#ff7a00] px-6 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-sm hover:scale-[1.03] flex items-center gap-2"
+            >
+              <BarChart2 className="w-4 h-4 text-[#ff7a00] group-hover:text-white" />
+              <span>Live Analytics Dashboard</span>
+            </button>
+
             {/* Secondary White Border Button */}
             <button
               onClick={() => onRouteChange('services')}
               id="hero-secondary-cta-btn"
-              className="bg-white/5 hover:bg-[#ff7a00] text-white border-2 border-white/80 hover:border-[#ff7a00] px-7 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-sm hover:scale-[1.03] flex items-center gap-2"
+              className="bg-white/5 hover:bg-[#ff7a00] text-white border-2 border-white/80 hover:border-[#ff7a00] px-6 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-sm hover:scale-[1.03] flex items-center gap-2"
             >
               <span>{slide.secondaryCtaText}</span>
             </button>

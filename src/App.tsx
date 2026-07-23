@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { ConsultationModal } from './components/ConsultationModal';
 
 import { HomePage } from './pages/HomePage';
+import { DashboardPage } from './pages/DashboardPage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { TeamPage } from './pages/TeamPage';
@@ -33,6 +34,13 @@ export default function App() {
       case 'home':
         return (
           <HomePage
+            onRouteChange={handleRouteChange}
+            onOpenConsultationModal={() => setConsultationModalOpen(true)}
+          />
+        );
+      case 'dashboard':
+        return (
+          <DashboardPage
             onRouteChange={handleRouteChange}
             onOpenConsultationModal={() => setConsultationModalOpen(true)}
           />

@@ -292,6 +292,31 @@ export const HomePage: React.FC<HomePageProps> = ({
         <WarRoomSimulator onBookBriefing={onOpenConsultationModal} />
       </section>
 
+      {/* 6.5 Live Dashboard Teaser Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-orange-950 via-zinc-950 to-black rounded-[24px] p-8 sm:p-12 border border-orange-500/30 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff7a00]/20 text-[#ff7a00] border border-[#ff7a00]/30 text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5" /> Chanakya Live Command Portal
+            </div>
+            <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Explore Live <span className="text-[#ff7a00]">State-Wide Analytics</span> & AI Strategy Generator
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              Access real-time seat share projections, demographic radar, GOTV turnout velocity trackers, and AI campaign slogan matrix models.
+            </p>
+          </div>
+
+          <button
+            onClick={() => onRouteChange('dashboard')}
+            className="bg-[#ff7a00] hover:bg-white hover:text-black text-white px-8 py-4 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all duration-300 shadow-xl shadow-orange-500/30 flex items-center gap-2 shrink-0 group"
+          >
+            <span>Launch Live Dashboard</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </section>
+
       {/* 7. Our Campaign Execution Pipeline (Timeline) */}
       <section className="bg-zinc-900 text-white py-16 border-y border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
