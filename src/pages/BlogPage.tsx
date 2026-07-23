@@ -94,7 +94,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                     {post.title}
                   </h3>
 
-                  <p className="text-xs text-zinc-300 leading-relaxed font-normal">
+                  <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                     {post.excerpt}
                   </p>
                 </div>
@@ -153,7 +153,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               />
             </div>
 
-            <div className="text-xs sm:text-sm text-zinc-300 space-y-4 leading-relaxed font-normal whitespace-pre-line">
+            <div className="text-sm sm:text-base text-zinc-100 space-y-4 leading-relaxed font-normal whitespace-pre-line">
               {activePost.content}
             </div>
 

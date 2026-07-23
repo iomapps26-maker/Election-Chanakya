@@ -80,7 +80,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                 Book Campaign Strategy Meeting
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+              <p className="text-sm text-zinc-200 mt-1 font-medium leading-relaxed">
                 Direct advisory session with CEO Vivek Gupta’s core analytics team at Sector 63, Noida HQ or via encrypted video conference.
               </p>
             </div>

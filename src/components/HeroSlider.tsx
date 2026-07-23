@@ -98,7 +98,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl">
+          <p className="text-base sm:text-xl text-zinc-100 font-medium leading-relaxed max-w-2xl drop-shadow-md">
             {slide.subtitle}
           </p>
 

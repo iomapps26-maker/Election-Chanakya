@@ -109,11 +109,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               Where Empirical Psephology Meets <span className="text-[#ff7a00]">Electoral Dominance</span>
             </h2>
 
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              Founded under the visionary leadership of CEO <span className="font-bold text-white">Vivek Gupta</span>, Election Chanakya is India’s foremost political intelligence, survey research, and campaign engineering agency headquartered in <span className="font-semibold text-white">Sector 63, Noida</span>.
+            <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed">
+              Founded under the visionary leadership of CEO <span className="font-extrabold text-amber-400">Vivek Gupta</span>, Election Chanakya is India’s foremost political intelligence, survey research, and campaign engineering agency headquartered in <span className="font-bold text-white">Sector 63, Noida</span>.
             </p>
 
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-200 leading-relaxed">
               We replace guesswork and conventional political intuition with machine learning algorithms, voter propensity models, door-to-door ground research, and micro-level Panna Pramukh booth management.
             </p>
 
@@ -178,7 +178,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Why National Leaders & Parties Trust Election Chanakya
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-400">
+            <p className="text-sm sm:text-base text-zinc-200 font-medium">
               Four fundamental principles that guarantee electoral performance and absolute confidentiality.
             </p>
           </div>
@@ -216,7 +216,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <IconComp className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                  <p className="text-xs text-zinc-300 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-zinc-200 leading-relaxed font-normal">{item.desc}</p>
                 </div>
               );
             })}
@@ -266,12 +266,12 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <p className="text-xs text-zinc-300 leading-relaxed">{srv.shortDesc}</p>
+                  <p className="text-sm text-zinc-200 leading-relaxed font-normal">{srv.shortDesc}</p>
                   
-                  <div className="space-y-1.5 pt-2 border-t border-zinc-800">
+                  <div className="space-y-2 pt-2 border-t border-zinc-800">
                     {srv.features.slice(0, 3).map((f, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] font-medium text-zinc-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00]" />
+                      <div key={i} className="flex items-center gap-2 text-xs font-semibold text-zinc-100">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00] shrink-0" />
                         <span>{f}</span>
                       </div>
                     ))}

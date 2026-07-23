@@ -65,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ onRouteChange }) => {
               </div>
             </div>
 
-            <p className="text-zinc-400 text-sm leading-relaxed max-w-md">
+            <p className="text-zinc-200 text-sm leading-relaxed max-w-md font-medium">
               India’s premier political analytics, psephology, booth management, and campaign strategy advisory firm. Empowering political candidates and parties with data-driven electoral victory blueprints.
             </p>
 

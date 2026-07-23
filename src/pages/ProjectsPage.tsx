@@ -105,17 +105,17 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <p className="text-xs text-zinc-300 leading-relaxed font-normal">
+                  <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                     {p.description}
                   </p>
 
                   <div className="grid grid-cols-2 gap-3 p-3.5 bg-zinc-900/90 rounded-xl border border-zinc-800">
                     <div>
-                      <p className="text-[10px] text-zinc-400 font-bold uppercase">Swing Achieved</p>
+                      <p className="text-xs text-zinc-300 font-bold uppercase">Swing Achieved</p>
                       <p className="text-lg font-extrabold text-[#ff7a00]">{p.swingAchieved}</p>
                     </div>
                     <div>
-                      <p className="text-[10px] text-zinc-400 font-bold uppercase">Voter Reach</p>
+                      <p className="text-xs text-zinc-300 font-bold uppercase">Voter Reach</p>
                       <p className="text-lg font-extrabold text-white">{p.votersReached}</p>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                   <div className="space-y-1.5 pt-2">
                     <p className="text-xs font-bold text-[#ff7a00] uppercase">Key Deliverables & Impact:</p>
                     {p.results.map((res, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
+                      <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-100 font-medium">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                         <span>{res}</span>
                       </div>

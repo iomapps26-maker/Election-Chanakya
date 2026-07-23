@@ -85,7 +85,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({
                 <p className="text-sm font-semibold text-[#ff7a00] mt-1">{ceo.role}</p>
               </div>
 
-              <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-zinc-100 leading-relaxed font-medium">
                 {ceo.description}
               </p>
 
@@ -155,14 +155,14 @@ export const TeamPage: React.FC<TeamPageProps> = ({
                 </div>
 
                 <div className="p-5 space-y-3">
-                  <p className="text-xs text-zinc-300 leading-relaxed font-normal">
+                  <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                     {member.description}
                   </p>
 
-                  <div className="space-y-1 pt-2 border-t border-zinc-800">
+                  <div className="space-y-1.5 pt-2 border-t border-zinc-800">
                     {member.specialization.slice(0, 3).map((s, i) => (
-                      <div key={i} className="text-[11px] font-medium text-zinc-300 flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00]" />
+                      <div key={i} className="text-xs font-semibold text-zinc-100 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00] shrink-0" />
                         <span>{s}</span>
                       </div>
                     ))}

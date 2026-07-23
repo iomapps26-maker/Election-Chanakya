@@ -95,7 +95,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             15 Specialized Electoral Solutions
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400">
+          <p className="text-sm sm:text-base text-zinc-200 font-medium">
             Tailored political consulting and data science capabilities designed for Indian elections.
           </p>
         </div>
@@ -123,13 +123,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <p className="text-xs text-zinc-300 leading-relaxed font-normal">
+                  <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                     {srv.shortDesc}
                   </p>
 
-                  <div className="space-y-1.5 pt-3 border-t border-zinc-800">
+                  <div className="space-y-2 pt-3 border-t border-zinc-800">
                     {srv.features.map((feat, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] font-semibold text-zinc-300">
+                      <div key={i} className="flex items-center gap-2 text-xs font-semibold text-zinc-100">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#ff7a00] shrink-0" />
                         <span>{feat}</span>
                       </div>

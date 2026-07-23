@@ -101,7 +101,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white">Headquarters Address</h3>
-                  <p className="text-xs text-zinc-300 mt-1 leading-relaxed">
+                  <p className="text-sm text-zinc-100 mt-1 leading-relaxed font-medium">
                     {COMPANY_INFO.addressFull}
                   </p>
                 </div>
@@ -113,10 +113,10 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white">Confidential Phone Hotline</h3>
-                  <a href={`tel:${COMPANY_INFO.phone}`} className="text-sm font-extrabold text-[#ff7a00] block mt-1 hover:underline">
+                  <a href={`tel:${COMPANY_INFO.phone}`} className="text-base font-extrabold text-[#ff7a00] block mt-1 hover:underline">
                     {COMPANY_INFO.phone}
                   </a>
-                  <p className="text-[11px] text-zinc-400">Available 24/7 during campaign periods</p>
+                  <p className="text-xs text-zinc-300 font-medium mt-0.5">Available 24/7 during campaign periods</p>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white">Official Email</h3>
-                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-xs font-semibold text-zinc-300 hover:text-[#ff7a00]">
+                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-sm font-semibold text-zinc-200 hover:text-[#ff7a00]">
                     {COMPANY_INFO.email}
                   </a>
                 </div>
@@ -138,10 +138,10 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white">Leadership Contact</h3>
-                  <p className="text-xs text-zinc-200 font-semibold mt-1">
+                  <p className="text-sm text-amber-400 font-bold mt-1">
                     CEO: {COMPANY_INFO.ceo}
                   </p>
-                  <p className="text-[11px] text-zinc-400">Private briefings arranged under binding NDA.</p>
+                  <p className="text-xs text-zinc-300 font-medium mt-0.5">Private briefings arranged under binding NDA.</p>
                 </div>
               </div>
 
