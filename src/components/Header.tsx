@@ -109,8 +109,8 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </button>
 
-            {/* Desktop Menu Center (Visible on XL screens to prevent crowding) */}
-            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5">
+            {/* Desktop Menu Center (Visible on XL screens to fit all 9 items comfortably) */}
+            <nav className="hidden xl:flex items-center gap-1 xl:gap-2">
               {navItems.map((item) => {
                 const isActive = activeRoute === item.route;
                 return (
@@ -118,13 +118,13 @@ export const Header: React.FC<HeaderProps> = ({
                     key={item.route}
                     onClick={() => handleNavClick(item.route)}
                     id={`nav-link-${item.route}`}
-                    className={`relative px-2.5 xl:px-3 py-2 text-xs font-extrabold transition-all duration-200 rounded-lg ${
+                    className={`relative px-2.5 xl:px-3 py-1.5 text-xs font-extrabold transition-all duration-200 rounded-lg whitespace-nowrap ${
                       isActive
-                        ? 'text-orange-600 bg-orange-50 border border-orange-200/80 shadow-sm'
-                        : 'text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100'
+                        ? 'text-orange-600 bg-orange-50/90 border border-orange-200/90 shadow-sm'
+                        : 'text-zinc-800 hover:text-orange-600 hover:bg-orange-50/60'
                     }`}
                   >
-                    <span className="flex items-center gap-1.2">
+                    <span className="flex items-center gap-1.5">
                       {item.label}
                       {item.badge && (
                         <span className="bg-orange-600 text-white text-[8px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse shadow-sm">
@@ -141,46 +141,47 @@ export const Header: React.FC<HeaderProps> = ({
               })}
             </nav>
 
-            {/* CTA Right (Desktop & Large Tablet) */}
-            <div className="hidden md:flex items-center gap-2.5 sm:gap-3 shrink-0">
+            {/* CTA Right & Actions */}
+            <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+              {/* Phone button on large screens */}
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
                 id="header-phone-btn"
-                className="hidden lg:flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-full border border-zinc-300 text-zinc-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50 bg-white transition-all duration-300 shadow-sm"
+                className="hidden 2xl:flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-full border border-zinc-300 text-zinc-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50 bg-white transition-all duration-300 shadow-sm"
               >
                 <Phone className="w-3.5 h-3.5 text-orange-600" />
                 <span>{COMPANY_INFO.phone}</span>
               </a>
 
+              {/* Strategy Brief Button (Visible everywhere, responsive text size) */}
               <button
                 onClick={onOpenConsultationModal}
                 id="header-cta-brief-btn"
-                className="relative group overflow-hidden bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-500 hover:to-amber-500 text-white border border-orange-500/40 px-4 sm:px-5 py-2.5 rounded-full text-xs font-black tracking-wider uppercase transition-all duration-300 shadow-lg shadow-orange-600/20 hover:scale-[1.02] flex items-center gap-1.5"
+                className="relative group overflow-hidden bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-500 hover:to-amber-500 text-white border border-orange-500/40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-black tracking-wider uppercase transition-all duration-300 shadow-md shadow-orange-600/20 hover:scale-[1.02] flex items-center gap-1 shrink-0"
               >
-                <span className="relative z-10 flex items-center gap-1.5">
-                  Strategy Brief
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <span className="relative z-10 flex items-center gap-1">
+                  <span>Strategy Brief</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </span>
               </button>
-            </div>
 
-            {/* Mobile / Tablet Menu Toggle */}
-            <div className="flex items-center gap-2 xl:hidden shrink-0">
+              {/* Phone icon button on mobile only */}
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="p-2 sm:p-2.5 rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white font-bold shadow-md hover:from-orange-500 hover:to-amber-500 transition-all flex md:hidden"
+                className="p-2 rounded-full bg-orange-50 border border-orange-200 text-orange-600 font-bold shadow-sm hover:bg-orange-100 transition-all flex sm:hidden shrink-0"
                 aria-label="Call Now"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
               </a>
 
+              {/* Mobile / Tablet Menu Toggle (Visible below XL) */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 id="mobile-menu-toggle-btn"
-                className="p-2 sm:p-2.5 rounded-xl border border-zinc-300 bg-zinc-100 text-zinc-900 hover:bg-orange-50 hover:border-orange-400 hover:text-orange-600 transition-colors flex items-center justify-center focus:outline-none"
+                className="xl:hidden p-1.5 sm:p-2 rounded-xl border border-zinc-300 bg-zinc-100 text-zinc-900 hover:bg-orange-50 hover:border-orange-400 hover:text-orange-600 transition-colors flex items-center justify-center focus:outline-none shrink-0"
                 aria-label="Toggle Navigation Menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6 text-orange-600" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
               </button>
             </div>
           </div>
@@ -189,7 +190,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer Overlay & Sliding Panel */}
       {mobileMenuOpen && (
-        <div className="xl:hidden fixed inset-0 z-40 flex flex-col justify-end">
+        <div className="lg:hidden fixed inset-0 z-40 flex flex-col justify-end">
           {/* Backdrop Blur Overlay */}
           <div
             className="fixed inset-0 bg-zinc-950/60 backdrop-blur-sm transition-opacity duration-300"
