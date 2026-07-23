@@ -47,11 +47,11 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ onRouteChange }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {['Main Navigation', 'Legal & Policies', 'Support & Proof'].map((cat, idx) => (
-            <div key={idx} className="white-glass-card p-6 rounded-[24px] border border-zinc-200 space-y-4">
-              <h3 className="text-base font-extrabold text-zinc-900 border-b border-orange-500/30 pb-2 text-[#ff7a00]">
+            <div key={idx} className="dark-glass-card p-6 rounded-[24px] border border-zinc-800 space-y-4 shadow-xl">
+              <h3 className="text-base font-extrabold border-b border-orange-500/30 pb-2 text-[#ff7a00]">
                 {cat}
               </h3>
-              <ul className="space-y-2.5 text-xs font-semibold text-zinc-700">
+              <ul className="space-y-2.5 text-xs font-semibold text-zinc-200">
                 {pages.filter(p => cat === 'Main Navigation' ? p.category === 'Main Navigation' : cat === 'Legal & Policies' ? p.category === 'Legal & Policies' : p.category !== 'Main Navigation' && p.category !== 'Legal & Policies').map((pg, i) => (
                   <li key={i}>
                     <button

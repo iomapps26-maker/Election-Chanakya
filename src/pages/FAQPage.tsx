@@ -61,9 +61,9 @@ export const FAQPage: React.FC<FAQPageProps> = ({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search FAQs, e.g. NDA, sample size, Vivek Gupta..."
-            className="w-full bg-zinc-50 border border-zinc-300 rounded-2xl px-5 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-[#ff7a00] transition-colors shadow-sm pr-12"
+            className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-5 py-3.5 text-sm text-white placeholder-zinc-400 focus:outline-none focus:border-[#ff7a00] transition-colors shadow-lg pr-12 font-medium"
           />
-          <Search className="w-5 h-5 text-zinc-400 absolute right-4 top-4" />
+          <Search className="w-5 h-5 text-[#ff7a00] absolute right-4 top-4" />
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-2">
@@ -73,8 +73,8 @@ export const FAQPage: React.FC<FAQPageProps> = ({
               onClick={() => setCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                 category === cat
-                  ? 'bg-[#ff7a00] text-white shadow-md'
-                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
+                  ? 'bg-[#ff7a00] text-white shadow-lg shadow-orange-500/20'
+                  : 'bg-zinc-900 text-zinc-300 border border-zinc-800 hover:bg-zinc-800 hover:text-white'
               }`}
             >
               {cat}
@@ -89,13 +89,13 @@ export const FAQPage: React.FC<FAQPageProps> = ({
             return (
               <div
                 key={faq.id}
-                className="white-glass-card rounded-[20px] overflow-hidden border border-zinc-200 transition-all"
+                className="dark-glass-card rounded-[20px] overflow-hidden border border-zinc-800 transition-all shadow-xl hover:border-orange-500/40"
               >
                 <button
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-zinc-900 hover:text-[#ff7a00] transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base text-white hover:text-[#ff7a00] transition-colors"
                 >
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-3">
                     <HelpCircle className="w-5 h-5 text-[#ff7a00] shrink-0" />
                     <span>{faq.question}</span>
                   </span>
@@ -107,7 +107,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 pt-4 bg-zinc-50/50">
+                  <div className="px-6 pb-6 text-sm text-zinc-100 leading-relaxed border-t border-zinc-800 pt-4 bg-zinc-900/60 font-normal">
                     {faq.answer}
                   </div>
                 )}

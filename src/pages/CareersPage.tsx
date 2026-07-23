@@ -78,7 +78,7 @@ export const CareersPage: React.FC<CareersPageProps> = () => {
           <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
             Open Positions
           </span>
-          <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight">
+          <h2 className="text-3xl font-extrabold text-white tracking-tight">
             Current Opportunities at Sector 63 Noida
           </h2>
         </div>
@@ -87,39 +87,39 @@ export const CareersPage: React.FC<CareersPageProps> = () => {
           {CAREER_OPENINGS.map((job) => (
             <div
               key={job.id}
-              className="white-glass-card p-6 sm:p-8 rounded-[24px] border border-zinc-200 hover:border-[#ff7a00] transition-all space-y-4"
+              className="dark-glass-card p-6 sm:p-8 rounded-[24px] border border-zinc-800 hover:border-[#ff7a00] transition-all space-y-4 shadow-xl"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff7a00] bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#ff7a00] bg-orange-500/20 px-3 py-1 rounded-full border border-orange-500/30">
                     {job.department}
                   </span>
-                  <h3 className="text-xl font-extrabold text-zinc-900 mt-2">{job.title}</h3>
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-500 mt-1">
-                    <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#ff7a00]" /> {job.location}</span>
-                    <span className="flex items-center gap-1"><Briefcase className="w-3.5 h-3.5 text-[#ff7a00]" /> {job.type}</span>
-                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5 text-[#ff7a00]" /> Exp: {job.experience}</span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-2">{job.title}</h3>
+                  <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-zinc-300 mt-2">
+                    <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-[#ff7a00]" /> {job.location}</span>
+                    <span className="flex items-center gap-1.5"><Briefcase className="w-4 h-4 text-[#ff7a00]" /> {job.type}</span>
+                    <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#ff7a00]" /> Exp: {job.experience}</span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => setSelectedJob(job.id)}
-                  className="bg-[#ff7a00] hover:bg-black text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors shrink-0"
+                  className="bg-[#ff7a00] hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider transition-colors shrink-0 shadow-lg"
                 >
                   Apply Now
                 </button>
               </div>
 
-              <p className="text-xs text-zinc-600 leading-relaxed font-normal border-t border-zinc-100 pt-3">
+              <p className="text-sm text-zinc-200 leading-relaxed font-normal border-t border-zinc-800 pt-4">
                 {job.description}
               </p>
 
-              <div className="space-y-1.5 pt-1">
-                <p className="text-xs font-bold text-zinc-900 uppercase">Key Responsibilities:</p>
+              <div className="space-y-2 pt-1">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">Key Responsibilities:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {job.responsibilities.map((resp, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-zinc-700 font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#ff7a00] shrink-0" />
+                    <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-100 font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-[#ff7a00] shrink-0" />
                       <span>{resp}</span>
                     </div>
                   ))}

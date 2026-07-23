@@ -56,10 +56,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${
                 filter === cat
-                  ? 'bg-[#ff7a00] text-white shadow-md shadow-orange-500/20'
-                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
+                  ? 'bg-[#ff7a00] text-white border-[#ff7a00] shadow-md shadow-orange-500/20'
+                  : 'bg-zinc-900 text-zinc-300 border-zinc-800 hover:border-zinc-700 hover:text-white'
               }`}
             >
               {cat}

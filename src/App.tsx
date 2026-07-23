@@ -180,7 +180,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-zinc-900 font-['Poppins',sans-serif] selection:bg-[#ff7a00] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#050508] text-zinc-100 font-['Poppins',sans-serif] selection:bg-[#ff7a00] selection:text-white">
       {/* SEO & Meta Tags Injector */}
       <SEOHead route={currentRoute} />
 

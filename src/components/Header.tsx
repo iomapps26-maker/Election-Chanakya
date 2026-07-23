@@ -164,9 +164,9 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[68px] bg-white border-b border-zinc-200 shadow-2xl animate-in slide-in-from-top-4 duration-300 z-50">
+        <div className="lg:hidden fixed inset-x-0 top-[68px] bg-zinc-950/98 backdrop-blur-2xl border-b border-zinc-800 shadow-2xl animate-in slide-in-from-top-4 duration-300 z-50 text-white">
           <div className="p-6 space-y-3 max-h-[80vh] overflow-y-auto">
-            <div className="pb-3 mb-2 border-b border-zinc-100 flex items-center justify-between">
+            <div className="pb-3 mb-2 border-b border-zinc-800 flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
                 Navigation Menu
               </span>
@@ -182,32 +182,39 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     key={item.route}
                     onClick={() => handleNavClick(item.route)}
-                    className={`flex items-center justify-between p-3 rounded-xl font-semibold text-base transition-all ${
+                    className={`flex items-center justify-between p-3 rounded-xl font-bold text-base transition-all ${
                       isActive
-                        ? 'bg-orange-50 text-[#ff7a00] border-l-4 border-[#ff7a00]'
-                        : 'text-zinc-800 hover:bg-zinc-50 hover:text-[#ff7a00]'
+                        ? 'bg-orange-500/20 text-[#ff7a00] border-l-4 border-[#ff7a00]'
+                        : 'text-zinc-200 hover:bg-zinc-900 hover:text-white'
                     }`}
                   >
-                    <span>{item.label}</span>
-                    <ChevronRight className="w-4 h-4 text-zinc-400" />
+                    <span className="flex items-center gap-2">
+                      <span>{item.label}</span>
+                      {item.badge && (
+                        <span className="bg-red-500 text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md">
+                          {item.badge}
+                        </span>
+                      )}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-zinc-500" />
                   </button>
                 );
               })}
             </div>
 
-            <div className="pt-4 border-t border-zinc-100 space-y-3">
+            <div className="pt-4 border-t border-zinc-800 space-y-3">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenConsultationModal();
                 }}
-                className="w-full bg-[#ff7a00] text-white py-3 rounded-xl font-bold text-sm tracking-wide uppercase hover:bg-black transition-colors shadow-lg shadow-orange-500/20 text-center"
+                className="w-full bg-[#ff7a00] text-white py-3 rounded-xl font-extrabold text-sm tracking-wide uppercase hover:bg-white hover:text-black transition-colors shadow-lg shadow-orange-500/20 text-center"
               >
                 Book Strategy Meeting
               </button>
               
-              <div className="text-center text-xs text-zinc-500 space-y-1">
-                <p>CEO: {COMPANY_INFO.ceo}</p>
+              <div className="text-center text-xs text-zinc-400 space-y-1 font-medium">
+                <p>CEO: <span className="text-white font-bold">{COMPANY_INFO.ceo}</span></p>
                 <p>Office: {COMPANY_INFO.office}</p>
               </div>
             </div>

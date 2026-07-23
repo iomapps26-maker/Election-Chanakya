@@ -205,18 +205,18 @@ export const WarRoomSimulator: React.FC<WarRoomSimulatorProps> = ({ onBookBriefi
 
               {/* Key Action Blueprints */}
               <div className="mt-6 space-y-2">
-                <p className="text-xs font-bold text-zinc-300 uppercase tracking-wider">Key Recommended Actions:</p>
-                <ul className="text-xs text-zinc-400 space-y-1.5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">Key Recommended Actions:</p>
+                <ul className="text-xs sm:text-sm text-zinc-200 space-y-2 font-medium">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Deploy {Math.round((pannaCoverage / 100) * 3500)} Panna Pramukhs across booths.</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Run {surveyDepth} rounds of stratified sentiment polling before nominations.</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>Connect directly with CEO Vivek Gupta for confidential strategy.</span>
                   </li>
                 </ul>

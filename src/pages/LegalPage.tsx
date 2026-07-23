@@ -87,13 +87,13 @@ Service cancellations must be submitted in writing to info@electionchanakya.co.i
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="white-glass-card p-8 sm:p-12 rounded-[24px] border border-zinc-200 space-y-6 text-zinc-800 text-sm sm:text-base leading-relaxed whitespace-pre-line font-normal">
+        <div className="dark-glass-card p-8 sm:p-12 rounded-[24px] border border-zinc-800 shadow-2xl space-y-6 text-zinc-100 text-sm sm:text-base leading-relaxed whitespace-pre-line font-normal">
           {content.body}
 
-          <div className="pt-8 border-t border-zinc-200 text-xs text-zinc-500 space-y-1">
-            <p className="font-bold text-zinc-900">{COMPANY_INFO.legalName}</p>
+          <div className="pt-8 border-t border-zinc-800 text-xs text-zinc-400 space-y-1">
+            <p className="font-extrabold text-white">{COMPANY_INFO.legalName}</p>
             <p>Office: {COMPANY_INFO.addressFull}</p>
-            <p>Phone: {COMPANY_INFO.phone} | Email: {COMPANY_INFO.email}</p>
+            <p>Phone: <span className="text-[#ff7a00] font-bold">{COMPANY_INFO.phone}</span> | Email: {COMPANY_INFO.email}</p>
           </div>
         </div>
       </section>

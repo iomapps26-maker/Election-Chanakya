@@ -49,7 +49,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             Pioneering Empirical Psephology & <span className="text-[#ff7a00]">Electoral Engineering</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-zinc-300 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl text-zinc-100 font-medium max-w-3xl mx-auto leading-relaxed drop-shadow">
             Headquartered in Sector 63, Noida, Election Chanakya is India’s benchmark political advisory firm translating raw voter sentiment into decisive electoral victories.
           </p>
 
@@ -82,11 +82,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               Transforming How Political Campaigns Are Fought & Won Across India
             </h2>
 
-            <p className="text-sm text-zinc-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-100 font-medium leading-relaxed">
               Established in {COMPANY_INFO.established}, Election Chanakya was formed with a singular objective: to replace outdated intuition with rigorous mathematical data models, real-time war room monitoring, and ground-level booth management.
             </p>
 
-            <p className="text-sm text-zinc-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-200 leading-relaxed">
               Over the past decade, our team has successfully managed over {COMPANY_INFO.campaignsManaged} election campaigns across parliamentary (Lok Sabha), assembly (Vidhan Sabha), and municipal levels.
             </p>
 
@@ -153,11 +153,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 "Modern Elections Are Won on Polling Booth Tables, Not in Television Studios."
               </h2>
 
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed italic">
+              <p className="text-sm sm:text-base text-zinc-100 leading-relaxed italic font-medium">
                 "When we founded Election Chanakya, my conviction was simple: Indian democracy is vast, vibrant, and incredibly nuanced. A single speech or high-decibel rally cannot guarantee victory unless every single polling booth has a dedicated, verified Panna Pramukh tracking silent voters."
               </p>
 
-              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                 "Our team in Noida Sector 63 works round-the-clock during election seasons to provide candidates with the precise data, narrative clarity, and crisis defense required to secure decisive margins."
               </p>
 
@@ -183,32 +183,32 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00] border-x border-b border-zinc-800">
+          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00] border-x border-b border-zinc-800 shadow-xl">
             <div className="w-12 h-12 rounded-2xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center font-bold">
               <Target className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-extrabold text-white">Our Mission</h3>
-            <p className="text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-zinc-200 leading-relaxed font-normal">
               To empower visionary political leaders with bulletproof psephological data, booth-level mobilization technology, and media strategy to build stronger democratic representation.
             </p>
           </div>
 
-          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-white border-x border-b border-zinc-800">
+          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-white border-x border-b border-zinc-800 shadow-xl">
             <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white border border-zinc-700 flex items-center justify-center font-bold">
               <Compass className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-extrabold text-white">Our Vision</h3>
-            <p className="text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-zinc-200 leading-relaxed font-normal">
               To be recognized globally as the most scientifically disciplined, ethically grounded, and technologically advanced political intelligence advisory firm in South Asia.
             </p>
           </div>
 
-          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00] border-x border-b border-zinc-800">
+          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00] border-x border-b border-zinc-800 shadow-xl">
             <div className="w-12 h-12 rounded-2xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center font-bold">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-extrabold text-white">Core Values</h3>
-            <p className="text-xs text-zinc-300 leading-relaxed">
+            <p className="text-sm text-zinc-200 leading-relaxed font-normal">
               Empirical Integrity, Absolute NDA Confidentiality, Unwavering Discipline, Rapid Crisis Response, and Client Victory First.
             </p>
           </div>

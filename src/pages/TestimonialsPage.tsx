@@ -34,7 +34,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
             Client Testimonials & <span className="text-[#ff7a00]">Reviews</span>
           </h1>
 
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto font-normal">
+          <p className="text-base sm:text-lg text-zinc-100 max-w-2xl mx-auto font-medium leading-relaxed">
             Endorsements from Members of Parliament, Cabinet Ministers, and party high command leaders across India.
           </p>
         </div>
@@ -72,9 +72,9 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
                 </span>
               </div>
               <div className="p-6 space-y-2">
-                <h3 className="text-lg font-extrabold text-white">{vid.title}</h3>
-                <p className="text-xs text-[#ff7a00] font-semibold">{vid.subtitle}</p>
-                <p className="text-xs text-zinc-400 italic pt-2">"{vid.quote}"</p>
+                <h3 className="text-xl font-extrabold text-white">{vid.title}</h3>
+                <p className="text-xs text-[#ff7a00] font-bold uppercase tracking-wider">{vid.subtitle}</p>
+                <p className="text-sm text-zinc-200 italic pt-2 leading-relaxed font-normal">"{vid.quote}"</p>
               </div>
             </div>
           ))}
@@ -83,22 +83,22 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({
         {/* Written Endorsement Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t) => (
-            <div key={t.id} className="white-glass-card p-6 sm:p-8 rounded-[24px] border border-zinc-200 flex flex-col justify-between space-y-4">
-              <div className="space-y-3">
+            <div key={t.id} className="dark-glass-card p-6 sm:p-8 rounded-[24px] border border-zinc-800 flex flex-col justify-between space-y-6 shadow-xl hover:border-orange-500/40 transition-colors">
+              <div className="space-y-4">
                 <Quote className="w-8 h-8 text-[#ff7a00]" />
-                <div className="flex text-amber-400 gap-1">
+                <div className="flex text-amber-400 gap-1 text-sm">
                   {'★'.repeat(t.rating)}
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-700 italic leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-100 italic leading-relaxed font-normal">
                   "{t.quote}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-zinc-100 flex items-center gap-3">
-                <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border-2 border-[#ff7a00]" />
+              <div className="pt-4 border-t border-zinc-800 flex items-center gap-3">
+                <img src={t.image} alt={t.name} className="w-11 h-11 rounded-full object-cover border-2 border-[#ff7a00] shadow-md" />
                 <div>
-                  <p className="text-xs font-extrabold text-zinc-900">{t.name}</p>
-                  <p className="text-[11px] text-zinc-500">{t.designation}</p>
+                  <p className="text-sm font-extrabold text-white">{t.name}</p>
+                  <p className="text-xs text-amber-400 font-semibold">{t.designation}</p>
                 </div>
               </div>
             </div>
