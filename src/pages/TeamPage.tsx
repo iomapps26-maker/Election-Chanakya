@@ -129,7 +129,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({
           <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
             Executive Leadership Team
           </span>
-          <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Specialist Domain Heads
           </h2>
         </div>
@@ -138,16 +138,16 @@ export const TeamPage: React.FC<TeamPageProps> = ({
           {otherMembers.map((member) => (
             <div
               key={member.id}
-              className="white-glass-card rounded-[20px] overflow-hidden group flex flex-col justify-between hover:border-[#ff7a00] transition-all"
+              className="dark-glass-card rounded-[20px] overflow-hidden group flex flex-col justify-between border border-zinc-800 hover:border-[#ff7a00] transition-all"
             >
               <div>
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
                     <h3 className="text-lg font-extrabold text-white">{member.name}</h3>
                     <p className="text-[11px] font-semibold text-[#ff7a00]">{member.role}</p>
@@ -155,13 +155,13 @@ export const TeamPage: React.FC<TeamPageProps> = ({
                 </div>
 
                 <div className="p-5 space-y-3">
-                  <p className="text-xs text-zinc-600 leading-relaxed font-normal">
+                  <p className="text-xs text-zinc-300 leading-relaxed font-normal">
                     {member.description}
                   </p>
 
-                  <div className="space-y-1 pt-2 border-t border-zinc-100">
+                  <div className="space-y-1 pt-2 border-t border-zinc-800">
                     {member.specialization.slice(0, 3).map((s, i) => (
-                      <div key={i} className="text-[11px] font-medium text-zinc-700 flex items-center gap-1.5">
+                      <div key={i} className="text-[11px] font-medium text-zinc-300 flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00]" />
                         <span>{s}</span>
                       </div>
@@ -173,7 +173,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({
               <div className="px-5 pb-5 pt-2">
                 <button
                   onClick={onOpenConsultationModal}
-                  className="w-full bg-zinc-100 hover:bg-[#ff7a00] hover:text-white text-zinc-900 py-2 rounded-xl text-xs font-bold uppercase transition-colors"
+                  className="w-full bg-zinc-800 hover:bg-[#ff7a00] hover:text-white text-zinc-200 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors border border-zinc-700 hover:border-[#ff7a00]"
                 >
                   Schedule Advisory
                 </button>

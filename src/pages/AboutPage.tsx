@@ -183,32 +183,32 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="white-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00]">
-            <div className="w-12 h-12 rounded-2xl bg-orange-100 text-[#ff7a00] flex items-center justify-center font-bold">
+          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00] border-x border-b border-zinc-800">
+            <div className="w-12 h-12 rounded-2xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center font-bold">
               <Target className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-extrabold text-zinc-900">Our Mission</h3>
-            <p className="text-xs text-zinc-600 leading-relaxed">
+            <h3 className="text-xl font-extrabold text-white">Our Mission</h3>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               To empower visionary political leaders with bulletproof psephological data, booth-level mobilization technology, and media strategy to build stronger democratic representation.
             </p>
           </div>
 
-          <div className="white-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-black">
-            <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center font-bold">
+          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-white border-x border-b border-zinc-800">
+            <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white border border-zinc-700 flex items-center justify-center font-bold">
               <Compass className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-extrabold text-zinc-900">Our Vision</h3>
-            <p className="text-xs text-zinc-600 leading-relaxed">
+            <h3 className="text-xl font-extrabold text-white">Our Vision</h3>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               To be recognized globally as the most scientifically disciplined, ethically grounded, and technologically advanced political intelligence advisory firm in South Asia.
             </p>
           </div>
 
-          <div className="white-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00]">
-            <div className="w-12 h-12 rounded-2xl bg-orange-100 text-[#ff7a00] flex items-center justify-center font-bold">
+          <div className="dark-glass-card p-8 rounded-[24px] space-y-4 border-t-4 border-t-[#ff7a00] border-x border-b border-zinc-800">
+            <div className="w-12 h-12 rounded-2xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center font-bold">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-extrabold text-zinc-900">Core Values</h3>
-            <p className="text-xs text-zinc-600 leading-relaxed">
+            <h3 className="text-xl font-extrabold text-white">Core Values</h3>
+            <p className="text-xs text-zinc-300 leading-relaxed">
               Empirical Integrity, Absolute NDA Confidentiality, Unwavering Discipline, Rapid Crisis Response, and Client Victory First.
             </p>
           </div>
@@ -217,17 +217,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       </section>
 
       {/* 5. Professional Timeline & Milestones */}
-      <section className="bg-zinc-50 py-16 border-y border-zinc-200">
+      <section className="bg-zinc-950 py-16 border-y border-zinc-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center space-y-2">
             <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
               Milestone Track Record
             </span>
-            <h2 className="text-3xl font-extrabold text-zinc-900">A Decade of Electoral Excellence</h2>
+            <h2 className="text-3xl font-extrabold text-white">A Decade of Electoral Excellence</h2>
           </div>
 
-          <div className="space-y-6 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-zinc-300">
+          <div className="space-y-6 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-zinc-800">
             {[
               {
                 year: '2016',
@@ -256,10 +256,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               }
             ].map((m, idx) => (
               <div key={idx} className="relative flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="w-full sm:w-[45%] bg-white p-5 rounded-2xl border border-zinc-200 shadow-md">
+                <div className="w-full sm:w-[45%] bg-zinc-900/90 p-5 rounded-2xl border border-zinc-800 shadow-md">
                   <span className="text-xs font-extrabold text-[#ff7a00] font-mono">{m.year}</span>
-                  <h3 className="text-base font-bold text-zinc-900 mt-1">{m.title}</h3>
-                  <p className="text-xs text-zinc-600 mt-1 leading-relaxed">{m.desc}</p>
+                  <h3 className="text-base font-bold text-white mt-1">{m.title}</h3>
+                  <p className="text-xs text-zinc-300 mt-1 leading-relaxed">{m.desc}</p>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-[#ff7a00] text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-md">
                   ✓

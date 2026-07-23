@@ -62,10 +62,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id as any)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${
                 filter === cat.id
-                  ? 'bg-[#ff7a00] text-white shadow-md shadow-orange-500/20'
-                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
+                  ? 'bg-[#ff7a00] text-white border-[#ff7a00] shadow-md shadow-orange-500/20'
+                  : 'bg-zinc-900 text-zinc-300 border-zinc-800 hover:border-zinc-600'
               }`}
             >
               {cat.label}
@@ -78,7 +78,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
           {filteredProjects.map((p) => (
             <div
               key={p.id}
-              className="white-glass-card rounded-[24px] overflow-hidden border border-zinc-200 group flex flex-col justify-between"
+              className="dark-glass-card rounded-[24px] overflow-hidden border border-zinc-800 group flex flex-col justify-between"
             >
               <div>
                 <div
@@ -88,9 +88,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
                   
                   <div className="absolute top-4 left-4 bg-black/80 text-white text-[11px] font-bold uppercase px-3 py-1 rounded-full border border-zinc-700">
                     {p.state} • {p.year}
@@ -105,26 +105,26 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <p className="text-xs text-zinc-600 leading-relaxed font-normal">
+                  <p className="text-xs text-zinc-300 leading-relaxed font-normal">
                     {p.description}
                   </p>
 
-                  <div className="grid grid-cols-2 gap-3 p-3.5 bg-orange-50/70 rounded-xl border border-orange-100">
+                  <div className="grid grid-cols-2 gap-3 p-3.5 bg-zinc-900/90 rounded-xl border border-zinc-800">
                     <div>
-                      <p className="text-[10px] text-zinc-500 font-bold uppercase">Swing Achieved</p>
+                      <p className="text-[10px] text-zinc-400 font-bold uppercase">Swing Achieved</p>
                       <p className="text-lg font-extrabold text-[#ff7a00]">{p.swingAchieved}</p>
                     </div>
                     <div>
-                      <p className="text-[10px] text-zinc-500 font-bold uppercase">Voter Reach</p>
-                      <p className="text-lg font-extrabold text-zinc-900">{p.votersReached}</p>
+                      <p className="text-[10px] text-zinc-400 font-bold uppercase">Voter Reach</p>
+                      <p className="text-lg font-extrabold text-white">{p.votersReached}</p>
                     </div>
                   </div>
 
                   <div className="space-y-1.5 pt-2">
-                    <p className="text-xs font-bold text-zinc-900 uppercase">Key Deliverables & Impact:</p>
+                    <p className="text-xs font-bold text-[#ff7a00] uppercase">Key Deliverables & Impact:</p>
                     {p.results.map((res, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-zinc-700 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                         <span>{res}</span>
                       </div>
                     ))}
@@ -132,10 +132,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                 </div>
               </div>
 
-              <div className="p-6 pt-2 border-t border-zinc-100">
+              <div className="p-6 pt-2 border-t border-zinc-800">
                 <button
                   onClick={onOpenConsultationModal}
-                  className="w-full bg-zinc-900 hover:bg-[#ff7a00] text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-zinc-800 hover:bg-[#ff7a00] hover:text-white text-zinc-200 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-zinc-700 hover:border-[#ff7a00]"
                 >
                   <span>Request Similar Strategy Blueprint</span>
                   <ArrowRight className="w-4 h-4" />

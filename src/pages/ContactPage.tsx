@@ -88,60 +88,60 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
               <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
                 Direct Contact Points
               </span>
-              <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight">
+              <h2 className="text-3xl font-extrabold text-white tracking-tight">
                 Command Office Details
               </h2>
             </div>
 
             <div className="space-y-4">
               
-              <div className="white-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-200">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-[#ff7a00] flex items-center justify-center shrink-0">
+              <div className="dark-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-800">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-zinc-900">Headquarters Address</h3>
-                  <p className="text-xs text-zinc-600 mt-1 leading-relaxed">
+                  <h3 className="text-sm font-bold text-white">Headquarters Address</h3>
+                  <p className="text-xs text-zinc-300 mt-1 leading-relaxed">
                     {COMPANY_INFO.addressFull}
                   </p>
                 </div>
               </div>
 
-              <div className="white-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-200">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-[#ff7a00] flex items-center justify-center shrink-0">
+              <div className="dark-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-800">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-zinc-900">Confidential Phone Hotline</h3>
+                  <h3 className="text-sm font-bold text-white">Confidential Phone Hotline</h3>
                   <a href={`tel:${COMPANY_INFO.phone}`} className="text-sm font-extrabold text-[#ff7a00] block mt-1 hover:underline">
                     {COMPANY_INFO.phone}
                   </a>
-                  <p className="text-[11px] text-zinc-500">Available 24/7 during campaign periods</p>
+                  <p className="text-[11px] text-zinc-400">Available 24/7 during campaign periods</p>
                 </div>
               </div>
 
-              <div className="white-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-200">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-[#ff7a00] flex items-center justify-center shrink-0">
+              <div className="dark-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-800">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-zinc-900">Official Email</h3>
-                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-xs font-semibold text-zinc-800 hover:text-[#ff7a00]">
+                  <h3 className="text-sm font-bold text-white">Official Email</h3>
+                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-xs font-semibold text-zinc-300 hover:text-[#ff7a00]">
                     {COMPANY_INFO.email}
                   </a>
                 </div>
               </div>
 
-              <div className="white-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-200">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-[#ff7a00] flex items-center justify-center shrink-0">
+              <div className="dark-glass-card p-5 rounded-2xl flex items-start gap-4 border border-zinc-800">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-zinc-900">Leadership Contact</h3>
-                  <p className="text-xs text-zinc-700 font-semibold mt-1">
+                  <h3 className="text-sm font-bold text-white">Leadership Contact</h3>
+                  <p className="text-xs text-zinc-200 font-semibold mt-1">
                     CEO: {COMPANY_INFO.ceo}
                   </p>
-                  <p className="text-[11px] text-zinc-500">Private briefings arranged under binding NDA.</p>
+                  <p className="text-[11px] text-zinc-400">Private briefings arranged under binding NDA.</p>
                 </div>
               </div>
 
@@ -150,23 +150,23 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
 
           {/* Form Column */}
           <div className="lg:col-span-7">
-            <div className="white-glass-card p-8 rounded-[24px] border border-zinc-200 shadow-xl space-y-6">
+            <div className="dark-glass-card p-8 rounded-[24px] border border-zinc-800 shadow-xl space-y-6">
               
               <div>
-                <h3 className="text-2xl font-extrabold text-zinc-900">
+                <h3 className="text-2xl font-extrabold text-white">
                   Send a Strategy Inquiry
                 </h3>
-                <p className="text-xs text-zinc-500 mt-1">
+                <p className="text-xs text-zinc-400 mt-1">
                   Fill in your details below and our senior strategist will respond within 2 hours.
                 </p>
               </div>
 
               {submitted ? (
-                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-3">
-                  <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-                  <h4 className="text-lg font-bold text-emerald-900">Inquiry Received</h4>
-                  <p className="text-xs text-emerald-700">
-                    Thank you. CEO Vivek Gupta’s office will contact you on <span className="font-semibold">{formState.phone}</span> shortly.
+                <div className="bg-emerald-950/80 border border-emerald-500/40 rounded-2xl p-6 text-center space-y-3">
+                  <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
+                  <h4 className="text-lg font-bold text-white">Inquiry Received</h4>
+                  <p className="text-xs text-zinc-300">
+                    Thank you. CEO Vivek Gupta’s office will contact you on <span className="font-semibold text-[#ff7a00]">{formState.phone}</span> shortly.
                   </p>
                 </div>
               ) : (
@@ -174,7 +174,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">
+                      <label className="block text-xs font-bold text-zinc-300 uppercase mb-1">
                         Full Name *
                       </label>
                       <input
@@ -183,12 +183,12 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder="e.g. Sh. Vivek Gupta"
-                        className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-xs text-zinc-900 focus:outline-none focus:border-[#ff7a00] focus:bg-white transition-colors"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#ff7a00] transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">
+                      <label className="block text-xs font-bold text-zinc-300 uppercase mb-1">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -197,14 +197,14 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                         placeholder="+91 8218305284"
-                        className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-xs text-zinc-900 focus:outline-none focus:border-[#ff7a00] focus:bg-white transition-colors"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#ff7a00] transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">
+                      <label className="block text-xs font-bold text-zinc-300 uppercase mb-1">
                         Official Email
                       </label>
                       <input
@@ -212,12 +212,12 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="info@electionchanakya.co.in"
-                        className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-xs text-zinc-900 focus:outline-none focus:border-[#ff7a00] focus:bg-white transition-colors"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#ff7a00] transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">
+                      <label className="block text-xs font-bold text-zinc-300 uppercase mb-1">
                         Subject / Constituency
                       </label>
                       <input
@@ -225,13 +225,13 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                         value={formState.subject}
                         onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                         placeholder="e.g. War Room & Survey for Noida Seat"
-                        className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-xs text-zinc-900 focus:outline-none focus:border-[#ff7a00] focus:bg-white transition-colors"
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#ff7a00] transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-zinc-700 uppercase mb-1">
+                    <label className="block text-xs font-bold text-zinc-300 uppercase mb-1">
                       Campaign Requirements & Details *
                     </label>
                     <textarea
@@ -240,20 +240,20 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       placeholder="Outline your election timeline, target constituency, and services required..."
-                      className="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3 text-xs text-zinc-900 focus:outline-none focus:border-[#ff7a00] focus:bg-white transition-colors"
+                      className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#ff7a00] transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#ff7a00] hover:bg-black text-white font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-xs transition-all duration-300 shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
+                    className="w-full bg-[#ff7a00] hover:bg-white hover:text-black text-white font-extrabold py-3.5 rounded-xl uppercase tracking-wider text-xs transition-all duration-300 shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Confidential Message</span>
                   </button>
 
-                  <p className="text-[11px] text-zinc-500 text-center flex items-center justify-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <p className="text-[11px] text-zinc-400 text-center flex items-center justify-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                     All communication is bound by non-disclosure agreements.
                   </p>
 
