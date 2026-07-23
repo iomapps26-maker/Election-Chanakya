@@ -12,7 +12,7 @@ export const SitemapPage: React.FC<SitemapPageProps> = ({ onRouteChange }) => {
     { name: 'Home Page', route: 'home', category: 'Main Navigation' },
     { name: 'About Election Chanakya', route: 'about', category: 'Main Navigation' },
     { name: 'Our Political Services', route: 'services', category: 'Main Navigation' },
-    { name: 'Leadership & Team', route: 'route' as any, category: 'Main Navigation' },
+    { name: 'Leadership & Team', route: 'team', category: 'Main Navigation' },
     { name: 'Campaign Case Studies', route: 'projects', category: 'Main Navigation' },
     { name: 'Visual Media Gallery', route: 'gallery', category: 'Main Navigation' },
     { name: 'Psephology Insights Blog', route: 'blog', category: 'Main Navigation' },

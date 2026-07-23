@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({
               id="mobile-menu-toggle-btn"
               className={`p-2.5 rounded-xl border transition-colors ${
                 isScrolled
-                  ? 'border-zinc-300 text-zinc-800 hover:bg-zinc-100'
+                  ? 'border-zinc-700 bg-zinc-900 text-white hover:bg-zinc-800'
                   : 'border-white/20 text-white hover:bg-white/10'
               }`}
               aria-label="Toggle Menu"

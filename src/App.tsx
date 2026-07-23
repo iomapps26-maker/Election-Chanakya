@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageRoute } from './types';
 import { SEOHead } from './components/SEOHead';
 import { Header } from './components/Header';
@@ -22,11 +22,43 @@ import { SitemapPage } from './pages/SitemapPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export default function App() {
-  const [currentRoute, setCurrentRoute] = useState<PageRoute>('home');
+  const VALID_ROUTES: PageRoute[] = [
+    'home', 'dashboard', 'about', 'services', 'team', 'projects', 
+    'gallery', 'blog', 'contact', 'careers', 'faq', 'testimonials', 
+    'privacy', 'terms', 'disclaimer', 'cookie-policy', 'refund-policy', 'sitemap', '404'
+  ];
+
+  const getRouteFromHash = (): PageRoute => {
+    const hash = window.location.hash.replace(/^#\/?/, '');
+    if (VALID_ROUTES.includes(hash as PageRoute)) {
+      return hash as PageRoute;
+    }
+    return 'home';
+  };
+
+  const [currentRoute, setCurrentRoute] = useState<PageRoute>(() => getRouteFromHash());
   const [consultationModalOpen, setConsultationModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const route = getRouteFromHash();
+      setCurrentRoute(route);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+    };
+  }, []);
 
   const handleRouteChange = (route: PageRoute) => {
     setCurrentRoute(route);
+    if (window.location.hash !== `#${route}`) {
+      window.history.pushState(null, '', `#${route}`);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const renderCurrentPage = () => {
