@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageRoute } from '../types';
 import { COMPANY_INFO } from '../data/mockData';
+import { AnalyticsStats } from '../components/AnalyticsStats';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
   PieChart, Pie, Cell, LineChart, Line, AreaChart, Area, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis
@@ -262,6 +263,11 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           </div>
 
         </div>
+      </div>
+
+      {/* D3 Empirical Operational Performance Trends Component */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AnalyticsStats />
       </div>
 
       {/* Main Analytics Grid */}
