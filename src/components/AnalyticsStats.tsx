@@ -57,9 +57,9 @@ const METRICS_CONFIG: MetricConfig[] = [
     growthNote: '+11.4x Growth since 2021',
     unit: 'Booths',
     icon: Building2,
-    color: '#ff7a00',
-    gradientStart: '#ff7a00',
-    gradientStop: '#ff3d00',
+    color: '#09090b',
+    gradientStart: '#09090b',
+    gradientStop: '#27272a',
     description: 'Micro-booth coverage across assembly segments with real-time GPS verification.'
   },
   {
@@ -69,9 +69,9 @@ const METRICS_CONFIG: MetricConfig[] = [
     growthNote: 'Door-to-Door Verified Data',
     unit: 'Million Responses',
     icon: FileCheck2,
-    color: '#10b981',
-    gradientStart: '#10b981',
-    gradientStop: '#059669',
+    color: '#059669',
+    gradientStart: '#059669',
+    gradientStop: '#047857',
     description: 'Validated household interviews capturing sentiment, caste equations, and local issues.'
   },
   {
@@ -81,9 +81,9 @@ const METRICS_CONFIG: MetricConfig[] = [
     growthNote: '98.2% Mobile App Adoption',
     unit: 'K Mobile Cadre',
     icon: Users2,
-    color: '#f59e0b',
-    gradientStart: '#f59e0b',
-    gradientStop: '#d97706',
+    color: '#18181b',
+    gradientStart: '#18181b',
+    gradientStop: '#3f3f46',
     description: 'Direct page-level voter relationship managers linked to central war room routing.'
   },
   {
@@ -93,8 +93,8 @@ const METRICS_CONFIG: MetricConfig[] = [
     growthNote: 'Tested in 280+ Elections',
     unit: '% Accuracy',
     icon: Target,
-    color: '#3b82f6',
-    gradientStart: '#3b82f6',
+    color: '#2563eb',
+    gradientStart: '#2563eb',
     gradientStop: '#1d4ed8',
     description: 'Algorithmic voter propensity matching verified against official Election Commission results.'
   }
@@ -277,36 +277,36 @@ export const AnalyticsStats: React.FC = () => {
   }, [activeMetric, selectedConfig]);
 
   return (
-    <div className="dark-glass-card rounded-[28px] border border-orange-500/30 p-6 sm:p-8 space-y-8 shadow-2xl relative overflow-hidden" id="analytics-stats-component">
+    <div className="bg-white rounded-[28px] border border-zinc-200 p-6 sm:p-8 space-y-8 shadow-xl relative overflow-hidden" id="analytics-stats-component">
       {/* Background Decorative Glow */}
-      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-72 h-72 bg-[#ff7a00]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-72 h-72 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-72 h-72 bg-zinc-100 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-72 h-72 bg-zinc-100 rounded-full blur-3xl pointer-events-none" />
 
       {/* Title & Section Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-zinc-800/80 pb-6 relative z-10">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-zinc-200 pb-6 relative z-10">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff7a00]/20 text-[#ff7a00] border border-[#ff7a00]/30 text-xs font-bold uppercase tracking-wider">
-            <TrendingUp className="w-3.5 h-3.5 text-[#ff7a00]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-zinc-900 border border-zinc-300 text-xs font-bold uppercase tracking-wider">
+            <TrendingUp className="w-3.5 h-3.5 text-black" />
             <span>D3 Empirical Growth Analytics</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-            Key Operational <span className="text-gradient-orange">Performance Trends</span>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight leading-tight">
+            Key Operational <span className="text-gradient-dark">Performance Trends</span>
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 max-w-2xl">
+          <p className="text-xs sm:text-sm text-zinc-600 max-w-2xl">
             Historical scale trajectories from 2021 to 2026 across ground surveys, Panna Pramukh onboarding, booth management, and predictive precision.
           </p>
         </div>
 
         {/* Selected Data Point Highlight Badge */}
-        <div className="bg-zinc-950/90 border border-zinc-800 p-4 rounded-2xl flex items-center gap-4 shrink-0 shadow-lg">
-          <div className="p-3 rounded-xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30">
+        <div className="bg-zinc-50 border border-zinc-300 p-4 rounded-2xl flex items-center gap-4 shrink-0 shadow-sm">
+          <div className="p-3 rounded-xl bg-black text-white">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
-            <p className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400">
+            <p className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-500">
               {hoveredPoint ? `Snapshot: ${hoveredPoint.label}` : 'Current Metric Total'}
             </p>
-            <p className="text-xl font-black text-white font-mono">
+            <p className="text-xl font-black text-zinc-950 font-mono">
               {hoveredPoint
                 ? activeMetric === 'booths'
                   ? hoveredPoint.booths.toLocaleString()
@@ -333,16 +333,16 @@ export const AnalyticsStats: React.FC = () => {
               onClick={() => setActiveMetric(metric.id)}
               className={`p-4 rounded-2xl text-left transition-all duration-300 border flex flex-col justify-between space-y-3 group ${
                 isSelected
-                  ? 'bg-zinc-900 border-[#ff7a00] shadow-lg shadow-orange-500/15 ring-1 ring-[#ff7a00]/40'
-                  : 'bg-zinc-950/70 border-zinc-800/90 hover:border-zinc-700 hover:bg-zinc-900/60'
+                  ? 'bg-black text-white border-black shadow-lg'
+                  : 'bg-zinc-50 text-zinc-900 border-zinc-200 hover:border-black hover:bg-zinc-100'
               }`}
             >
               <div className="flex items-center justify-between">
                 <div
                   className={`w-10 h-10 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 ${
                     isSelected
-                      ? 'bg-[#ff7a00] text-white shadow-md shadow-orange-500/30'
-                      : 'bg-zinc-800 text-zinc-400'
+                      ? 'bg-white text-black shadow-md'
+                      : 'bg-zinc-200 text-zinc-700'
                   }`}
                 >
                   <IconComponent className="w-5 h-5" />
@@ -350,8 +350,8 @@ export const AnalyticsStats: React.FC = () => {
                 <span
                   className={`text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full ${
                     isSelected
-                      ? 'bg-orange-500/20 text-[#ff7a00] border border-orange-500/30'
-                      : 'bg-zinc-800/80 text-zinc-400'
+                      ? 'bg-zinc-800 text-white'
+                      : 'bg-zinc-200 text-zinc-700'
                   }`}
                 >
                   {metric.unit}
@@ -359,12 +359,12 @@ export const AnalyticsStats: React.FC = () => {
               </div>
 
               <div>
-                <p className="text-xs font-medium text-zinc-400">{metric.title}</p>
-                <p className="text-xl sm:text-2xl font-black text-white tracking-tight mt-0.5">
+                <p className={`text-xs font-medium ${isSelected ? 'text-zinc-300' : 'text-zinc-600'}`}>{metric.title}</p>
+                <p className={`text-xl sm:text-2xl font-black tracking-tight mt-0.5 ${isSelected ? 'text-white' : 'text-zinc-950'}`}>
                   {metric.currentValue}
                 </p>
-                <p className="text-[10px] font-semibold text-emerald-400 mt-1 flex items-center gap-1">
-                  <CheckCircle className="w-3 h-3 text-emerald-400" />
+                <p className={`text-[10px] font-semibold mt-1 flex items-center gap-1 ${isSelected ? 'text-emerald-400' : 'text-emerald-600'}`}>
+                  <CheckCircle className="w-3 h-3" />
                   <span>{metric.growthNote}</span>
                 </p>
               </div>
@@ -374,15 +374,15 @@ export const AnalyticsStats: React.FC = () => {
       </div>
 
       {/* D3 Visual Chart Box */}
-      <div className="bg-zinc-950/90 border border-zinc-800/90 rounded-2xl p-4 sm:p-6 space-y-4 relative z-10" ref={containerRef}>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-zinc-800/80 pb-3">
+      <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 sm:p-6 space-y-4 relative z-10" ref={containerRef}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-zinc-200 pb-3">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full animate-ping" style={{ backgroundColor: selectedConfig.color }} />
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-zinc-950 uppercase tracking-wider">
               {selectedConfig.title} — Historical Trajectory (2021–2026)
             </h3>
           </div>
-          <p className="text-[11px] text-zinc-400 italic">
+          <p className="text-[11px] text-zinc-500 italic">
             Hover over any node on the D3 curve for specific quarterly data points
           </p>
         </div>
@@ -393,12 +393,12 @@ export const AnalyticsStats: React.FC = () => {
         </div>
 
         {/* Chart Description Footer */}
-        <div className="bg-zinc-900/60 p-3 rounded-xl border border-zinc-800/80 flex items-center justify-between text-xs text-zinc-300">
+        <div className="bg-white p-3 rounded-xl border border-zinc-200 flex items-center justify-between text-xs text-zinc-700">
           <div className="flex items-center gap-2">
-            <Info className="w-4 h-4 text-[#ff7a00] shrink-0" />
+            <Info className="w-4 h-4 text-black shrink-0" />
             <span>{selectedConfig.description}</span>
           </div>
-          <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest hidden sm:inline">
+          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest hidden sm:inline">
             Verified Source: Election Chanakya Noida HQ
           </span>
         </div>

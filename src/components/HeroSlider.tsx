@@ -72,76 +72,76 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
               }`}
               style={{ backgroundImage: `url(${s.image})` }}
             />
-            {/* Dark Gradient Overlay for optimal readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/50" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+            {/* Light Gradient Overlay for optimal readability in White Theme */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/65" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-white/70" />
           </div>
         );
       })}
 
       {/* Hero Content Area */}
-      <div className="relative z-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center pt-24 pb-12">
+      <div className="relative z-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center pt-28 pb-12">
         <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700 key={slide.id}">
           
           {/* Badge Tagline */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold text-orange-400">
-            <ShieldCheck className="w-4 h-4 text-[#ff7a00]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50/95 backdrop-blur-md border border-orange-200/80 text-xs font-extrabold text-orange-800 shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-orange-600" />
             <span>{slide.tagline}</span>
           </div>
 
           {/* Animated Main Title */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-zinc-950">
             {slide.title}{' '}
-            <span className="text-[#ff7a00] underline decoration-orange-500/40 decoration-wavy decoration-2">
+            <span className="text-gradient-orange underline decoration-orange-500/40 decoration-wavy decoration-2">
               {slide.highlightText}
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-xl text-zinc-100 font-medium leading-relaxed max-w-2xl drop-shadow-md">
+          <p className="text-base sm:text-xl text-zinc-700 font-medium leading-relaxed max-w-2xl">
             {slide.subtitle}
           </p>
 
           {/* CTA Action Buttons */}
           <div className="pt-2 flex flex-wrap items-center gap-4">
-            {/* Primary Orange Button */}
+            {/* Primary Orange Gradient Button */}
             <button
               onClick={onOpenConsultationModal}
               id="hero-primary-cta-btn"
-              className="bg-[#ff7a00] hover:bg-black text-white border-2 border-[#ff7a00] hover:border-white px-7 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-xl shadow-orange-500/30 hover:scale-[1.03] flex items-center gap-2 group"
+              className="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-500 hover:to-amber-500 text-white px-7 py-3.5 rounded-full text-sm font-black tracking-wider uppercase transition-all duration-300 shadow-xl shadow-orange-600/30 hover:scale-[1.03] flex items-center gap-2 group border border-orange-400/30"
             >
               <span>{slide.ctaText}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            {/* Live Analytics Dashboard Button */}
+            {/* Live Analytics Dashboard Blue Button */}
             <button
               onClick={() => onRouteChange('dashboard')}
               id="hero-dashboard-cta-btn"
-              className="bg-[#ff7a00]/20 hover:bg-[#ff7a00] text-white border-2 border-[#ff7a00] px-6 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-sm hover:scale-[1.03] flex items-center gap-2"
+              className="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-700 hover:from-blue-600 hover:to-indigo-500 text-white px-6 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 hover:scale-[1.03] flex items-center gap-2 shadow-xl shadow-blue-600/25 group border border-blue-400/30"
             >
-              <BarChart2 className="w-4 h-4 text-[#ff7a00] group-hover:text-white" />
+              <BarChart2 className="w-4 h-4 text-white transition-colors" />
               <span>Live Analytics Dashboard</span>
             </button>
 
-            {/* Secondary White Border Button */}
+            {/* Secondary White/Orange Border Button */}
             <button
               onClick={() => onRouteChange('services')}
               id="hero-secondary-cta-btn"
-              className="bg-white/5 hover:bg-[#ff7a00] text-white border-2 border-white/80 hover:border-[#ff7a00] px-6 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-sm hover:scale-[1.03] flex items-center gap-2"
+              className="bg-white hover:bg-orange-50 text-zinc-900 hover:text-orange-600 border-2 border-zinc-300 hover:border-orange-500 px-6 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 backdrop-blur-md hover:scale-[1.03] flex items-center gap-2 shadow-sm"
             >
               <span>{slide.secondaryCtaText}</span>
             </button>
           </div>
 
           {/* Slide Highlighting Key Stats */}
-          <div className="pt-6 grid grid-cols-3 gap-4 border-t border-white/15 max-w-lg">
+          <div className="pt-6 grid grid-cols-3 gap-4 border-t border-zinc-300 max-w-lg">
             {slide.stats.map((st, i) => (
               <div key={i} className="space-y-0.5">
-                <p className="text-xl sm:text-2xl font-extrabold text-[#ff7a00] tracking-tight">
+                <p className="text-xl sm:text-2xl font-black text-orange-600 tracking-tight">
                   {st.value}
                 </p>
-                <p className="text-[11px] sm:text-xs text-zinc-300 font-medium uppercase tracking-wider">
+                <p className="text-[11px] sm:text-xs text-zinc-700 font-bold uppercase tracking-wider">
                   {st.label}
                 </p>
               </div>
@@ -152,12 +152,12 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
       </div>
 
       {/* Bottom Controls Bar */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-4">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-zinc-300 pt-4">
         
         {/* Slide Counter & Dots */}
         <div className="flex items-center gap-4">
-          <span className="text-sm font-mono font-bold text-orange-400">
-            0{currentSlide + 1} <span className="text-zinc-600">/ 0{slides.length}</span>
+          <span className="text-sm font-mono font-bold text-zinc-900">
+            0{currentSlide + 1} <span className="text-zinc-500">/ 0{slides.length}</span>
           </span>
 
           <div className="flex items-center gap-2">
@@ -168,8 +168,8 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
                 aria-label={`Go to slide ${i + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === currentSlide
-                    ? 'w-8 bg-[#ff7a00]'
-                    : 'w-2 bg-white/30 hover:bg-white/60'
+                    ? 'w-8 bg-black'
+                    : 'w-2 bg-zinc-300 hover:bg-zinc-500'
                 }`}
               />
             ))}
@@ -181,7 +181,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           <button
             onClick={() => setIsPlaying(!isPlaying)}
             aria-label={isPlaying ? 'Pause Auto Play' : 'Play Auto Play'}
-            className="p-2.5 rounded-full bg-white/10 hover:bg-[#ff7a00] text-white border border-white/20 transition-all duration-300"
+            className="p-2.5 rounded-full bg-white hover:bg-black hover:text-white text-black border border-zinc-300 hover:border-black transition-all duration-300 shadow-sm"
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
           </button>
@@ -189,7 +189,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           <button
             onClick={handlePrev}
             aria-label="Previous Slide"
-            className="p-2.5 rounded-full bg-white/10 hover:bg-[#ff7a00] text-white border border-white/20 transition-all duration-300 hover:scale-105"
+            className="p-2.5 rounded-full bg-white hover:bg-black hover:text-white text-black border border-zinc-300 hover:border-black transition-all duration-300 hover:scale-105 shadow-sm"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -197,7 +197,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           <button
             onClick={handleNext}
             aria-label="Next Slide"
-            className="p-2.5 rounded-full bg-white/10 hover:bg-[#ff7a00] text-white border border-white/20 transition-all duration-300 hover:scale-105"
+            className="p-2.5 rounded-full bg-white hover:bg-black hover:text-white text-black border border-zinc-300 hover:border-black transition-all duration-300 hover:scale-105 shadow-sm"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -206,10 +206,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
         {/* Quick Contact Prompt */}
         <a
           href={`tel:${COMPANY_INFO.phone}`}
-          className="hidden lg:flex items-center gap-2 text-xs font-semibold text-zinc-300 hover:text-[#ff7a00] transition-colors"
+          className="hidden lg:flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
         >
-          <PhoneCall className="w-4 h-4 text-[#ff7a00]" />
-          <span>Sector 63 Noida Hotline: {COMPANY_INFO.phone}</span>
+          <PhoneCall className="w-4 h-4 text-zinc-300" />
+          <span>Sector 63 Noida Hotline: <strong className="text-white">{COMPANY_INFO.phone}</strong></span>
         </a>
 
       </div>
