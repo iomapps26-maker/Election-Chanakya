@@ -3,68 +3,68 @@
 @layer base {
   body {
     font-family: 'Poppins', sans-serif;
-    background-color: #09090b;
+    background-color: #050508;
     color: #f4f4f5;
   }
 }
 
-/* Glassmorphism Cards */
-.white-glass-card {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(229, 231, 235, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.white-glass-card:hover {
-  box-shadow: 0 20px 45px -10px rgba(255, 122, 0, 0.22), 0 10px 20px -5px rgba(0, 0, 0, 0.08);
-  border-color: rgba(255, 122, 0, 0.5);
-  transform: translateY(-4px);
-}
-
-/* High-Tech Dark Glass Card */
+/* Advanced Futuristic Dark Glass Card */
 .dark-glass-card {
-  background: rgba(18, 18, 22, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 13, 18, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 122, 0, 0.18);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark-glass-card:hover {
-  border-color: rgba(255, 122, 0, 0.4);
-  box-shadow: 0 25px 60px rgba(255, 122, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 122, 0, 0.55);
+  box-shadow: 0 25px 60px rgba(255, 122, 0, 0.22), inset 0 1px 0 rgba(255, 122, 0, 0.2);
   transform: translateY(-4px);
 }
 
-/* Metallic Text & Accent Gradients */
+/* Cyber Neon Card */
+.cyber-card {
+  background: linear-gradient(135deg, rgba(20, 20, 28, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 122, 0, 0.25);
+  box-shadow: 0 0 30px rgba(255, 122, 0, 0.12), inset 0 0 15px rgba(255, 122, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+  border-color: rgba(255, 122, 0, 0.7);
+  box-shadow: 0 0 45px rgba(255, 122, 0, 0.28), inset 0 0 20px rgba(255, 122, 0, 0.1);
+}
+
+/* Metallic Gold & Saffron Text Gradients */
 .text-gradient-orange {
-  background: linear-gradient(135deg, #ff9f43 0%, #ff7a00 50%, #ff5200 100%);
+  background: linear-gradient(135deg, #FFC107 0%, #FF7A00 45%, #FF3D00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00F5D4 0%, #00BBF9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-gradient-chanakya {
-  background: linear-gradient(135deg, #ff7a00 0%, #e05d00 50%, #b84300 100%);
+  background: linear-gradient(135deg, #FF7A00 0%, #E05D00 50%, #992800 100%);
+}
+
+.bg-gradient-cyber {
+  background: linear-gradient(135deg, #ff7a00 0%, #ff1e00 100%);
 }
 
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-}
-
-.bg-grid-pattern-light {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 122, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 122, 0, 0.05) 1px, transparent 1px);
 }
 
 /* Custom Scrollbar */
@@ -72,7 +72,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #050508;
 }
 ::-webkit-scrollbar-thumb {
   background: #ff7a00;
@@ -82,18 +82,18 @@
   background: #e06900;
 }
 
-/* Orange glow pulse */
+/* Glow Pulses */
 @keyframes orangeGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 122, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 122, 0, 0.35);
   }
   50% {
-    box-shadow: 0 0 32px rgba(255, 122, 0, 0.6);
+    box-shadow: 0 0 35px rgba(255, 122, 0, 0.7);
   }
 }
 
 .animate-orange-glow {
-  animation: orangeGlow 3s infinite;
+  animation: orangeGlow 2.5s infinite;
 }
 
 /* Smooth Image Zoom Container */
@@ -107,5 +107,6 @@
 .img-zoom-container:hover img {
   transform: scale(1.08);
 }
+
 
 

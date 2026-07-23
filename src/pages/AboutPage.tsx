@@ -78,22 +78,22 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
               Our Legacy & Foundations
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-snug">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-snug">
               Transforming How Political Campaigns Are Fought & Won Across India
             </h2>
 
-            <p className="text-sm text-zinc-600 leading-relaxed">
+            <p className="text-sm text-zinc-300 leading-relaxed">
               Established in {COMPANY_INFO.established}, Election Chanakya was formed with a singular objective: to replace outdated intuition with rigorous mathematical data models, real-time war room monitoring, and ground-level booth management.
             </p>
 
-            <p className="text-sm text-zinc-600 leading-relaxed">
+            <p className="text-sm text-zinc-300 leading-relaxed">
               Over the past decade, our team has successfully managed over {COMPANY_INFO.campaignsManaged} election campaigns across parliamentary (Lok Sabha), assembly (Vidhan Sabha), and municipal levels.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 bg-orange-50/60 rounded-2xl border border-orange-100">
+              <div className="p-4 bg-orange-500/10 rounded-2xl border border-orange-500/30">
                 <p className="text-2xl font-extrabold text-[#ff7a00]">22 Million+</p>
-                <p className="text-xs font-semibold text-zinc-700 mt-1">Field Respondents Polled</p>
+                <p className="text-xs font-semibold text-zinc-300 mt-1">Field Respondents Polled</p>
               </div>
               <div className="p-4 bg-zinc-900 text-white rounded-2xl border border-zinc-800">
                 <p className="text-2xl font-extrabold text-[#ff7a00]">95.4%</p>
@@ -103,18 +103,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-zinc-200">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-zinc-800">
               <img
                 src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&q=80"
                 alt="Political Rally Strategy"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500 opacity-90"
               />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-zinc-200 mt-8">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-zinc-800 mt-8">
               <img
                 src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
                 alt="War Room Operations"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500 opacity-90"
               />
             </div>
           </div>

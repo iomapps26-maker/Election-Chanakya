@@ -268,7 +268,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
 
       {/* Google Map Section for Sector 63 Noida */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl space-y-2">
+        <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl space-y-2">
           <div className="bg-zinc-900 p-4 text-white flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
               <Building2 className="w-4 h-4 text-[#ff7a00]" />

@@ -3,6 +3,7 @@ import { PageRoute, ServiceItem } from '../types';
 import { COMPANY_INFO, SERVICES_LIST, TESTIMONIALS, BLOG_POSTS, FAQ_ITEMS } from '../data/mockData';
 import { HeroSlider } from '../components/HeroSlider';
 import { WarRoomSimulator } from '../components/WarRoomSimulator';
+import { ElectionCountdown } from '../components/ElectionCountdown';
 import { 
   BarChart3, 
   Target, 
@@ -90,24 +91,29 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
+      {/* 2.5 Live Election Countdown Component */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ElectionCountdown onOpenConsultationModal={onOpenConsultationModal} />
+      </section>
+
       {/* 3. About Election Chanakya Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 text-[#ff7a00] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" /> About Election Chanakya
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Where Empirical Psephology Meets <span className="text-[#ff7a00]">Electoral Dominance</span>
             </h2>
 
-            <p className="text-base text-zinc-600 leading-relaxed">
-              Founded under the visionary leadership of CEO <span className="font-bold text-zinc-900">Vivek Gupta</span>, Election Chanakya is India’s foremost political intelligence, survey research, and campaign engineering agency headquartered in <span className="font-semibold text-zinc-900">Sector 63, Noida</span>.
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              Founded under the visionary leadership of CEO <span className="font-bold text-white">Vivek Gupta</span>, Election Chanakya is India’s foremost political intelligence, survey research, and campaign engineering agency headquartered in <span className="font-semibold text-white">Sector 63, Noida</span>.
             </p>
 
-            <p className="text-sm text-zinc-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
               We replace guesswork and conventional political intuition with machine learning algorithms, voter propensity models, door-to-door ground research, and micro-level Panna Pramukh booth management.
             </p>
 
@@ -120,7 +126,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               ].map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#ff7a00] shrink-0" />
-                  <span className="text-sm font-semibold text-zinc-800">{feat}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-zinc-200">{feat}</span>
                 </div>
               ))}
             </div>
@@ -128,7 +134,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="pt-4 flex items-center gap-4">
               <button
                 onClick={() => onRouteChange('about')}
-                className="bg-[#ff7a00] hover:bg-black text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md shadow-orange-500/20 flex items-center gap-2"
+                className="bg-[#ff7a00] hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md shadow-orange-500/20 flex items-center gap-2"
               >
                 <span>Read Full Company Profile</span>
                 <ArrowRight className="w-4 h-4" />
@@ -138,16 +144,16 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           {/* Image & CEO Quote Card */}
           <div className="relative">
-            <div className="rounded-[24px] overflow-hidden border border-zinc-200 shadow-2xl img-zoom-container">
+            <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl img-zoom-container">
               <img
                 src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
                 alt="Election Chanakya War Room Strategy"
-                className="w-full h-[450px] object-cover"
+                className="w-full h-[450px] object-cover opacity-90"
               />
             </div>
 
             {/* Float Card */}
-            <div className="absolute -bottom-6 -left-6 bg-black text-white p-6 rounded-2xl border border-zinc-800 max-w-sm shadow-2xl hidden sm:block">
+            <div className="absolute -bottom-6 -left-6 dark-glass-card text-white p-6 rounded-2xl border border-zinc-800 max-w-sm shadow-2xl hidden sm:block">
               <p className="text-xs italic text-zinc-300">
                 "In Indian politics, noise does not equal votes. Granular booth-level data and disciplined voter mobilization win elections."
               </p>
@@ -162,17 +168,17 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 4. Why Choose Us Section */}
-      <section className="bg-zinc-50 py-16 border-y border-zinc-200/80">
+      <section className="bg-zinc-950 py-16 border-y border-zinc-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
               Unmatched Competitive Edge
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Why National Leaders & Parties Trust Election Chanakya
             </h2>
-            <p className="text-sm text-zinc-600">
+            <p className="text-xs sm:text-sm text-zinc-400">
               Four fundamental principles that guarantee electoral performance and absolute confidentiality.
             </p>
           </div>
@@ -204,13 +210,13 @@ export const HomePage: React.FC<HomePageProps> = ({
               return (
                 <div
                   key={idx}
-                  className="white-glass-card p-6 rounded-[18px] space-y-4 hover:border-[#ff7a00] transition-all"
+                  className="dark-glass-card p-6 rounded-[20px] space-y-4 border border-zinc-800 hover:border-[#ff7a00] transition-all"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-orange-50 text-[#ff7a00] flex items-center justify-center font-bold">
+                  <div className="w-12 h-12 rounded-xl bg-orange-500/20 text-[#ff7a00] border border-orange-500/30 flex items-center justify-center font-bold">
                     <IconComp className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-zinc-900">{item.title}</h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                  <p className="text-xs text-zinc-300 leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -226,14 +232,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
               Comprehensive Capabilities
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight mt-1">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
               360° Political Consulting & Campaign Engineering
             </h2>
           </div>
 
           <button
             onClick={() => onRouteChange('services')}
-            className="text-xs font-bold text-[#ff7a00] hover:text-black uppercase tracking-wider flex items-center gap-1 transition-colors"
+            className="text-xs font-bold text-[#ff7a00] hover:text-white uppercase tracking-wider flex items-center gap-1 transition-colors"
           >
             <span>View All Services</span>
             <ArrowRight className="w-4 h-4" />
@@ -244,27 +250,27 @@ export const HomePage: React.FC<HomePageProps> = ({
           {SERVICES_LIST.slice(0, 6).map((srv) => (
             <div
               key={srv.id}
-              className="white-glass-card rounded-[18px] overflow-hidden group flex flex-col justify-between"
+              className="dark-glass-card rounded-[20px] overflow-hidden group flex flex-col justify-between border border-zinc-800 hover:border-[#ff7a00] transition-all duration-300"
             >
               <div>
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={srv.image}
                     alt={srv.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-3 left-3 bg-[#ff7a00] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
+                  <span className="absolute bottom-3 left-3 bg-[#ff7a00] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
                     {srv.title}
                   </span>
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <p className="text-xs text-zinc-600 leading-relaxed">{srv.shortDesc}</p>
+                  <p className="text-xs text-zinc-300 leading-relaxed">{srv.shortDesc}</p>
                   
-                  <div className="space-y-1.5 pt-2">
+                  <div className="space-y-1.5 pt-2 border-t border-zinc-800">
                     {srv.features.slice(0, 3).map((f, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] font-medium text-zinc-700">
+                      <div key={i} className="flex items-center gap-2 text-[11px] font-medium text-zinc-300">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00]" />
                         <span>{f}</span>
                       </div>
@@ -276,7 +282,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="px-6 pb-6 pt-2">
                 <button
                   onClick={() => onRouteChange('services')}
-                  className="w-full bg-zinc-100 hover:bg-[#ff7a00] hover:text-white text-zinc-900 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-1"
+                  className="w-full bg-zinc-800 hover:bg-[#ff7a00] hover:text-white text-zinc-200 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 border border-zinc-700 hover:border-[#ff7a00]"
                 >
                   <span>Learn Details</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -369,14 +375,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
               Psephology & Research
             </span>
-            <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight mt-1">
+            <h2 className="text-3xl font-extrabold text-white tracking-tight mt-1">
               Latest Political Strategy Insights
             </h2>
           </div>
 
           <button
             onClick={() => onRouteChange('blog')}
-            className="text-xs font-bold text-[#ff7a00] hover:text-black uppercase tracking-wider flex items-center gap-1"
+            className="text-xs font-bold text-[#ff7a00] hover:text-white uppercase tracking-wider flex items-center gap-1 transition-colors"
           >
             <span>Read All Articles</span>
             <ArrowRight className="w-4 h-4" />
@@ -387,16 +393,16 @@ export const HomePage: React.FC<HomePageProps> = ({
           {BLOG_POSTS.map((post) => (
             <div
               key={post.id}
-              className="white-glass-card rounded-[18px] overflow-hidden group flex flex-col justify-between"
+              className="dark-glass-card rounded-[20px] overflow-hidden group flex flex-col justify-between border border-zinc-800 hover:border-[#ff7a00] transition-all duration-300"
             >
               <div>
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                   />
-                  <span className="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                  <span className="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-zinc-700">
                     {post.category}
                   </span>
                 </div>
@@ -408,20 +414,20 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <span>By {post.author}</span>
                   </div>
 
-                  <h3 className="text-base font-bold text-zinc-900 group-hover:text-[#ff7a00] transition-colors leading-snug">
+                  <h3 className="text-base font-bold text-white group-hover:text-[#ff7a00] transition-colors leading-snug">
                     {post.title}
                   </h3>
 
-                  <p className="text-xs text-zinc-600 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-zinc-300 line-clamp-3 leading-relaxed">
                     {post.excerpt}
                   </p>
                 </div>
               </div>
 
-              <div className="px-6 pb-6">
+              <div className="px-6 pb-6 pt-2 border-t border-zinc-800">
                 <button
                   onClick={() => onRouteChange('blog')}
-                  className="text-xs font-bold text-[#ff7a00] hover:text-black flex items-center gap-1 transition-colors"
+                  className="text-xs font-bold text-[#ff7a00] hover:text-white flex items-center gap-1 transition-colors"
                 >
                   <span>Read Full Insight</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -433,14 +439,14 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 9. Client Endorsements / Testimonials */}
-      <section className="bg-zinc-50 py-16 border-y border-zinc-200">
+      <section className="bg-zinc-950 py-16 border-y border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
               Client Endorsements
             </span>
-            <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight">
+            <h2 className="text-3xl font-extrabold text-white tracking-tight">
               What Political Leaders Say
             </h2>
           </div>
@@ -449,26 +455,26 @@ export const HomePage: React.FC<HomePageProps> = ({
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.id}
-                className="white-glass-card p-6 rounded-[18px] flex flex-col justify-between space-y-4"
+                className="dark-glass-card p-6 rounded-[20px] flex flex-col justify-between space-y-4 border border-zinc-800 hover:border-orange-500/40 transition-all"
               >
                 <div className="space-y-3">
                   <div className="flex text-amber-400 gap-1">
                     {'★'.repeat(t.rating)}
                   </div>
-                  <p className="text-xs text-zinc-700 italic leading-relaxed">
+                  <p className="text-xs text-zinc-300 italic leading-relaxed">
                     "{t.quote}"
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-zinc-200/80 flex items-center gap-3">
+                <div className="pt-4 border-t border-zinc-800 flex items-center gap-3">
                   <img
                     src={t.image}
                     alt={t.name}
                     className="w-10 h-10 rounded-full object-cover border border-[#ff7a00]"
                   />
                   <div>
-                    <p className="text-xs font-extrabold text-zinc-900">{t.name}</p>
-                    <p className="text-[11px] text-zinc-500">{t.designation}</p>
+                    <p className="text-xs font-extrabold text-white">{t.name}</p>
+                    <p className="text-[11px] text-zinc-400">{t.designation}</p>
                   </div>
                 </div>
               </div>
@@ -484,7 +490,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <span className="text-xs font-bold text-[#ff7a00] uppercase tracking-widest">
             Got Questions?
           </span>
-          <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight">
+          <h2 className="text-3xl font-extrabold text-white tracking-tight">
             Frequently Asked Questions
           </h2>
         </div>
@@ -495,11 +501,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             return (
               <div
                 key={faq.id}
-                className="white-glass-card rounded-2xl overflow-hidden border border-zinc-200 transition-all"
+                className="dark-glass-card rounded-2xl overflow-hidden border border-zinc-800 transition-all"
               >
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : faq.id)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-zinc-900 hover:text-[#ff7a00] transition-colors"
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-white hover:text-[#ff7a00] transition-colors"
                 >
                   <span>{faq.question}</span>
                   <ChevronDown
@@ -510,7 +516,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs text-zinc-600 leading-relaxed border-t border-zinc-100 pt-3">
+                  <div className="px-5 pb-5 text-xs text-zinc-300 leading-relaxed border-t border-zinc-800 pt-3">
                     {faq.answer}
                   </div>
                 )}
@@ -522,7 +528,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* 11. Final CTA Banner Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-black via-zinc-900 to-black text-white rounded-[24px] p-8 sm:p-14 border border-zinc-800 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="bg-gradient-to-r from-orange-950/80 via-zinc-950 to-black text-white rounded-[24px] p-8 sm:p-14 border border-orange-500/30 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
           
           <div className="space-y-3 max-w-xl text-center md:text-left">
             <span className="px-3 py-1 rounded-full bg-[#ff7a00]/20 text-[#ff7a00] border border-[#ff7a00]/30 text-xs font-bold uppercase tracking-wider">

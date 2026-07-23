@@ -51,8 +51,8 @@ export const Header: React.FC<HeaderProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200/80 shadow-md py-3 text-zinc-900'
-          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 text-white'
+          ? 'bg-zinc-950/90 backdrop-blur-xl border-b border-zinc-800/90 shadow-2xl py-3 text-white'
+          : 'bg-gradient-to-b from-black/90 via-black/50 to-transparent py-5 text-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,19 +64,19 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3 group text-left focus:outline-none"
             id="header-logo-btn"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#ff7a00] text-white flex items-center justify-center font-extrabold shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 rounded-xl bg-[#ff7a00] text-white flex items-center justify-center font-extrabold shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform duration-300 border border-orange-400/40">
               <BarChart3 className="w-6 h-6 stroke-[2.5]" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className={`font-extrabold text-xl tracking-tight ${isScrolled ? 'text-zinc-900' : 'text-white'}`}>
+                <span className="font-extrabold text-xl tracking-tight text-white">
                   ELECTION
                 </span>
                 <span className="font-extrabold text-xl tracking-tight text-[#ff7a00]">
                   CHANAKYA
                 </span>
               </div>
-              <p className={`text-[10px] font-medium tracking-widest uppercase ${isScrolled ? 'text-zinc-500' : 'text-zinc-300'}`}>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-zinc-400">
                 Political Analytics & Strategy
               </p>
             </div>
@@ -91,25 +91,23 @@ export const Header: React.FC<HeaderProps> = ({
                   key={item.route}
                   onClick={() => handleNavClick(item.route)}
                   id={`nav-link-${item.route}`}
-                  className={`relative px-3.5 py-2 text-sm font-semibold transition-colors duration-200 rounded-lg ${
+                  className={`relative px-3.5 py-2 text-xs font-bold transition-colors duration-200 rounded-lg ${
                     isActive
                       ? 'text-[#ff7a00]'
-                      : isScrolled
-                      ? 'text-zinc-700 hover:text-[#ff7a00]'
-                      : 'text-zinc-100 hover:text-[#ff7a00]'
+                      : 'text-zinc-300 hover:text-white hover:bg-zinc-900/60'
                   }`}
                 >
                   <span className="flex items-center gap-1.5">
                     {item.label}
                     {item.badge && (
-                      <span className="bg-red-500 text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse">
+                      <span className="bg-red-500 text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse shadow-sm">
                         {item.badge}
                       </span>
                     )}
                   </span>
                   {/* Animated Underline */}
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[2.5px] bg-[#ff7a00] rounded-full animate-pulse" />
+                    <span className="absolute bottom-0 left-3 right-3 h-[2.5px] bg-[#ff7a00] rounded-full shadow-sm shadow-orange-500/50 animate-pulse" />
                   )}
                 </button>
               );
@@ -121,11 +119,7 @@ export const Header: React.FC<HeaderProps> = ({
             <a
               href={`tel:${COMPANY_INFO.phone}`}
               id="header-phone-btn"
-              className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-full border transition-all duration-300 ${
-                isScrolled
-                  ? 'border-zinc-300 text-zinc-800 hover:border-[#ff7a00] hover:text-[#ff7a00] bg-zinc-50'
-                  : 'border-white/30 text-white hover:border-[#ff7a00] hover:text-[#ff7a00] bg-white/10'
-              }`}
+              className="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-full border border-zinc-800 text-zinc-300 hover:border-[#ff7a00] hover:text-white bg-zinc-900/80 transition-all duration-300"
             >
               <Phone className="w-3.5 h-3.5 text-[#ff7a00]" />
               <span>{COMPANY_INFO.phone}</span>
@@ -134,7 +128,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onOpenConsultationModal}
               id="header-cta-brief-btn"
-              className="relative group overflow-hidden bg-[#ff7a00] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md shadow-orange-500/20 hover:bg-black hover:shadow-black/20 hover:scale-[1.02] flex items-center gap-1.5"
+              className="relative group overflow-hidden bg-[#ff7a00] text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-lg shadow-orange-500/20 hover:bg-white hover:text-black hover:scale-[1.02] flex items-center gap-1.5"
             >
               <span className="relative z-10 flex items-center gap-1.5">
                 Strategy Brief
