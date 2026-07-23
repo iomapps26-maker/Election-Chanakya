@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageRoute } from '../types';
 import { COMPANY_INFO } from '../data/mockData';
-import { Phone, Menu, X, ChevronRight, BarChart3, Shield, ArrowUpRight } from 'lucide-react';
+import { Phone, Menu, X, ChevronRight, BarChart3, Shield, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface HeaderProps {
   activeRoute: PageRoute;
@@ -27,6 +27,29 @@ export const Header: React.FC<HeaderProps> = ({
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Handle escape key to close menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const navItems: { label: string; route: PageRoute; badge?: string }[] = [
@@ -55,39 +78,39 @@ export const Header: React.FC<HeaderProps> = ({
       <header
         className={`fixed top-[3px] left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-2xl border-b border-zinc-200/90 shadow-md py-3 text-zinc-900'
-            : 'bg-white/85 backdrop-blur-md border-b border-zinc-200/60 py-4 text-zinc-900'
+            ? 'bg-white/95 backdrop-blur-2xl border-b border-zinc-200/90 shadow-md py-2.5 sm:py-3 text-zinc-900'
+            : 'bg-white/90 backdrop-blur-md border-b border-zinc-200/60 py-3 sm:py-4 text-zinc-900'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
             
             {/* Logo Left */}
             <button
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-3 group text-left focus:outline-none"
+              className="flex items-center gap-2.5 sm:gap-3 group text-left focus:outline-none shrink-0"
               id="header-logo-btn"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-600 via-amber-600 to-orange-700 text-white flex items-center justify-center font-black shadow-md shadow-orange-600/20 group-hover:scale-105 transition-all duration-300 border border-orange-500/30">
-                <BarChart3 className="w-6 h-6 stroke-[2.5]" />
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-orange-600 via-amber-600 to-orange-700 text-white flex items-center justify-center font-black shadow-md shadow-orange-600/20 group-hover:scale-105 transition-all duration-300 border border-orange-500/30">
+                <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
               </div>
               <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-xl tracking-tight text-zinc-950">
+                <div className="flex items-center gap-1 leading-none">
+                  <span className="font-extrabold text-lg sm:text-xl tracking-tight text-zinc-950">
                     ELECTION
                   </span>
-                  <span className="font-extrabold text-xl tracking-tight text-orange-600">
+                  <span className="font-extrabold text-lg sm:text-xl tracking-tight text-orange-600">
                     CHANAKYA
                   </span>
                 </div>
-                <p className="text-[10px] font-bold tracking-widest uppercase text-zinc-500">
+                <p className="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-zinc-500 mt-0.5">
                   Political Analytics & Strategy
                 </p>
               </div>
             </button>
 
-            {/* Desktop Menu Center */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* Desktop Menu Center (Visible on XL screens to prevent crowding) */}
+            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5">
               {navItems.map((item) => {
                 const isActive = activeRoute === item.route;
                 return (
@@ -95,44 +118,44 @@ export const Header: React.FC<HeaderProps> = ({
                     key={item.route}
                     onClick={() => handleNavClick(item.route)}
                     id={`nav-link-${item.route}`}
-                    className={`relative px-3.5 py-2 text-xs font-extrabold transition-all duration-200 rounded-lg ${
+                    className={`relative px-2.5 xl:px-3 py-2 text-xs font-extrabold transition-all duration-200 rounded-lg ${
                       isActive
-                        ? 'text-zinc-950 bg-zinc-100 border border-zinc-300 shadow-inner'
-                        : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100/80'
+                        ? 'text-orange-600 bg-orange-50 border border-orange-200/80 shadow-sm'
+                        : 'text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100'
                     }`}
                   >
-                    <span className="flex items-center gap-1.5">
+                    <span className="flex items-center gap-1.2">
                       {item.label}
                       {item.badge && (
-                        <span className="bg-orange-600 text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse shadow-sm">
+                        <span className="bg-orange-600 text-white text-[8px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse shadow-sm">
                           {item.badge}
                         </span>
                       )}
                     </span>
-                    {/* Animated Underline */}
+                    {/* Active Underline */}
                     {isActive && (
-                      <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-orange-600 rounded-full shadow-sm" />
+                      <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-orange-600 rounded-full shadow-sm" />
                     )}
                   </button>
                 );
               })}
             </nav>
 
-            {/* CTA Right */}
-            <div className="hidden md:flex items-center gap-3">
+            {/* CTA Right (Desktop & Large Tablet) */}
+            <div className="hidden md:flex items-center gap-2.5 sm:gap-3 shrink-0">
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
                 id="header-phone-btn"
-                className="flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-full border border-zinc-300 text-zinc-800 hover:border-zinc-950 hover:bg-zinc-100 bg-white transition-all duration-300 shadow-sm"
+                className="hidden lg:flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-full border border-zinc-300 text-zinc-800 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50 bg-white transition-all duration-300 shadow-sm"
               >
-                <Phone className="w-3.5 h-3.5 text-zinc-950" />
+                <Phone className="w-3.5 h-3.5 text-orange-600" />
                 <span>{COMPANY_INFO.phone}</span>
               </a>
 
               <button
                 onClick={onOpenConsultationModal}
                 id="header-cta-brief-btn"
-                className="relative group overflow-hidden bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-500 hover:to-amber-500 text-white border border-orange-500/40 px-5 py-2.5 rounded-full text-xs font-black tracking-wider uppercase transition-all duration-300 shadow-lg shadow-orange-600/20 hover:scale-[1.03] flex items-center gap-1.5"
+                className="relative group overflow-hidden bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-500 hover:to-amber-500 text-white border border-orange-500/40 px-4 sm:px-5 py-2.5 rounded-full text-xs font-black tracking-wider uppercase transition-all duration-300 shadow-lg shadow-orange-600/20 hover:scale-[1.02] flex items-center gap-1.5"
               >
                 <span className="relative z-10 flex items-center gap-1.5">
                   Strategy Brief
@@ -141,87 +164,131 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             </div>
 
-          {/* Mobile Menu Toggle Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href={`tel:${COMPANY_INFO.phone}`}
-              className="p-2.5 rounded-full bg-black text-white font-bold shadow-md hover:bg-zinc-800 transition-colors"
-              aria-label="Call Now"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              id="mobile-menu-toggle-btn"
-              className="p-2.5 rounded-xl border border-zinc-300 bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors"
-              aria-label="Toggle Menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile / Tablet Menu Toggle */}
+            <div className="flex items-center gap-2 xl:hidden shrink-0">
+              <a
+                href={`tel:${COMPANY_INFO.phone}`}
+                className="p-2 sm:p-2.5 rounded-full bg-gradient-to-r from-orange-600 to-amber-600 text-white font-bold shadow-md hover:from-orange-500 hover:to-amber-500 transition-all flex md:hidden"
+                aria-label="Call Now"
+              >
+                <Phone className="w-4 h-4" />
+              </a>
+
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                id="mobile-menu-toggle-btn"
+                className="p-2 sm:p-2.5 rounded-xl border border-zinc-300 bg-zinc-100 text-zinc-900 hover:bg-orange-50 hover:border-orange-400 hover:text-orange-600 transition-colors flex items-center justify-center focus:outline-none"
+                aria-label="Toggle Navigation Menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6 text-orange-600" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Overlay & Sliding Panel */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[68px] bg-white/98 backdrop-blur-2xl border-b border-zinc-200 shadow-2xl animate-in slide-in-from-top-4 duration-300 z-50 text-zinc-900">
-          <div className="p-6 space-y-3 max-h-[80vh] overflow-y-auto">
-            <div className="pb-3 mb-2 border-b border-zinc-200 flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">
-                Navigation Menu
-              </span>
-              <span className="text-xs font-semibold text-zinc-700 flex items-center gap-1">
-                <Shield className="w-3.5 h-3.5 text-zinc-900" /> Confidential
-              </span>
-            </div>
-            
-            <div className="grid grid-cols-1 gap-1">
-              {navItems.map((item) => {
-                const isActive = activeRoute === item.route;
-                return (
-                  <button
-                    key={item.route}
-                    onClick={() => handleNavClick(item.route)}
-                    className={`flex items-center justify-between p-3 rounded-xl font-bold text-base transition-all ${
-                      isActive
-                        ? 'bg-zinc-100 text-black border-l-4 border-black'
-                        : 'text-zinc-700 hover:bg-zinc-100 hover:text-black'
-                    }`}
-                  >
-                    <span className="flex items-center gap-2">
-                      <span>{item.label}</span>
-                      {item.badge && (
-                        <span className="bg-black text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md">
-                          {item.badge}
-                        </span>
-                      )}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-zinc-400" />
-                  </button>
-                );
-              })}
+        <div className="xl:hidden fixed inset-0 z-40 flex flex-col justify-end">
+          {/* Backdrop Blur Overlay */}
+          <div
+            className="fixed inset-0 bg-zinc-950/60 backdrop-blur-sm transition-opacity duration-300"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+
+          {/* Sliding Menu Panel */}
+          <div className="relative z-50 w-full bg-white border-t border-zinc-200 shadow-2xl rounded-t-[28px] overflow-hidden max-h-[88vh] flex flex-col animate-in slide-in-from-bottom-6 duration-300">
+            {/* Drawer Header */}
+            <div className="p-4 sm:p-5 border-b border-zinc-200 bg-zinc-50/80 flex items-center justify-between shrink-0">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 rounded-lg bg-orange-600 text-white">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-extrabold uppercase tracking-widest text-zinc-900">
+                    Chanakya Navigation
+                  </p>
+                  <p className="text-[10px] font-semibold text-orange-600">
+                    Noida War Room HQ
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="hidden sm:inline-flex px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-extrabold uppercase">
+                  <Shield className="w-3 h-3 text-emerald-600 mr-1" /> Verified
+                </span>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 rounded-full bg-zinc-200 hover:bg-zinc-300 text-zinc-800 transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
-            <div className="pt-4 border-t border-zinc-200 space-y-3">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenConsultationModal();
-                }}
-                className="w-full bg-black text-white hover:bg-zinc-800 border border-black py-3 rounded-xl font-black text-sm tracking-wide uppercase transition-all shadow-md text-center"
-              >
-                Book Strategy Meeting
-              </button>
-              
-              <div className="text-center text-xs text-zinc-500 space-y-1 font-medium">
-                <p>CEO: <span className="text-zinc-900 font-bold">{COMPANY_INFO.ceo}</span></p>
-                <p>Office: {COMPANY_INFO.office}</p>
+            {/* Navigation Links Scroll Body */}
+            <div className="p-4 sm:p-6 overflow-y-auto space-y-2 flex-1">
+              <div className="grid grid-cols-1 gap-1">
+                {navItems.map((item) => {
+                  const isActive = activeRoute === item.route;
+                  return (
+                    <button
+                      key={item.route}
+                      onClick={() => handleNavClick(item.route)}
+                      className={`flex items-center justify-between p-3.5 rounded-xl font-bold text-base transition-all ${
+                        isActive
+                          ? 'bg-orange-50 text-orange-700 border-l-4 border-orange-600 font-extrabold shadow-sm'
+                          : 'text-zinc-800 hover:bg-zinc-100 hover:text-zinc-950'
+                      }`}
+                    >
+                      <span className="flex items-center gap-2.5">
+                        <span className="text-sm sm:text-base">{item.label}</span>
+                        {item.badge && (
+                          <span className="bg-orange-600 text-white text-[9px] font-black tracking-widest uppercase px-1.5 py-0.5 rounded-md animate-pulse">
+                            {item.badge}
+                          </span>
+                        )}
+                      </span>
+                      <ChevronRight className={`w-4 h-4 ${isActive ? 'text-orange-600' : 'text-zinc-400'}`} />
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Action Buttons in Drawer */}
+              <div className="pt-4 border-t border-zinc-200 space-y-3">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenConsultationModal();
+                  }}
+                  className="w-full bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 hover:from-orange-500 hover:to-amber-500 text-white py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all shadow-lg shadow-orange-600/20 text-center flex items-center justify-center gap-2 border border-orange-400/30"
+                >
+                  <span>Schedule Confidential Strategy Brief</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+
+                <a
+                  href={`tel:${COMPANY_INFO.phone}`}
+                  className="w-full bg-zinc-100 hover:bg-zinc-200 text-zinc-900 border border-zinc-300 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-4 h-4 text-orange-600" />
+                  <span>Call War Room: {COMPANY_INFO.phone}</span>
+                </a>
+
+                <div className="text-center text-[11px] text-zinc-500 pt-2 font-medium">
+                  <p>CEO: <span className="text-zinc-900 font-bold">{COMPANY_INFO.ceo}</span></p>
+                  <p className="mt-0.5">{COMPANY_INFO.office}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       )}
-    </header>
-  </>
+    </>
   );
 };
+
